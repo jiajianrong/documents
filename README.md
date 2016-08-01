@@ -1,5 +1,10 @@
 # 常用命令
 
+show variables like 'character%';
+
+<br />
+<br />
+<br />
 
 - npm list --depth=0 -g
 - npm install -g jr8   --registry http://registry.cnpmjs.org
