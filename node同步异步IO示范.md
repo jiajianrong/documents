@@ -1,7 +1,7 @@
 # nodejs的四种异步操作
 译自：http://stevehanov.ca/blog/index.php?id=127
 
-转载请注明出处：https://github.com/jiajianrong/documents/blob/master/node%E5%90%8C%E6%AD%A5%E5%BC%82%E6%AD%A5IO%E7%A4%BA%E8%8C%83.md
+转载请注明出处：[node同步异步IO示范.md](https://github.com/jiajianrong/documents/blob/master/node%E5%90%8C%E6%AD%A5%E5%BC%82%E6%AD%A5IO%E7%A4%BA%E8%8C%83.md)
 
 
 JavaScript并没有设计好异步操作。如果设计得当，编写异步代码应该和编写阻塞代码一样容易（注：此文较早，当时还没有ES6、7的async await，也难怪这位老爷爷抱怨）。结果导致开发人员不得不处理各种callback。
