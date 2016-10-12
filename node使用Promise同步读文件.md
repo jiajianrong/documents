@@ -194,4 +194,4 @@ Array.reduce第二个形参设置为sequence，可以免去定义全局变量。
 	}).then(function(){console.log('final: ',sum.totalBytes);})
 
 
-
+更多参考请见[google_dev](https://developers.google.com/web/fundamentals/getting-started/primers/promises)
