@@ -1,7 +1,7 @@
 
 译自：http://stevehanov.ca/blog/index.php?id=127
 
-转载请注明出处：[https://github.com/jiajianrong/documents/](https://github.com/jiajianrong/documents/blob/master/node%E5%90%8C%E6%AD%A5%E5%BC%82%E6%AD%A5IO%E7%A4%BA%E8%8C%83.md)
+转载请注明出处：[https://github.com/jiajianrong/documents/](https://github.com/jiajianrong/documents/)
 
 # nodejs同步异步IO示范
 
