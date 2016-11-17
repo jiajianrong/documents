@@ -1,7 +1,7 @@
 # 深入理解Node多线程(多进程)原理2 - cluster #
 
 
-在[上一节]() 我们分析了node child_process，本节将介绍node cluster模块
+在[上一节](https://github.com/jiajianrong/documents/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Node%E5%A4%9A%E8%BF%9B%E7%A8%8B(%E5%A4%9A%E7%BA%BF%E7%A8%8B)%E5%8E%9F%E7%90%861%20-%20child_process.md) 我们分析了node child_process，本节将介绍node cluster模块
 
 
 
@@ -38,7 +38,7 @@ cluster支持两种分发连接的方式：
 - 在除Windows系统之外的所有其他系统上，使用上节所提到的round-robin算法：主进程监听端口，接受socket连接并将之平均分配给所有子进程
 - 在Windows系统上，主进程创建server，直接把server本身发给子进程。这么一来子进程直接接受socket连接，和主进程无关了（当然也就不能负载均衡）
 
-两种方式的具体分析和demo上一节已经讲述的很清楚了，这里不做介绍。
+两种方式的具体分析和demo [上一节](https://github.com/jiajianrong/documents/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Node%E5%A4%9A%E8%BF%9B%E7%A8%8B(%E5%A4%9A%E7%BA%BF%E7%A8%8B)%E5%8E%9F%E7%90%861%20-%20child_process.md)已经讲述的很清楚了，这里不做介绍。
 
 
 
