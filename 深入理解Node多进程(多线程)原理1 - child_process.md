@@ -225,7 +225,7 @@ worker_tcp_socket_more_workers_with_round_robin.js
 
 ## More ##
 
-如果您已经阅读到此处，相信一定对Node的多进程机制原理有深刻理解了。劳驾高抬贵手star一下，然后我们继续深入[下一节cluster](https://github.com/jiajianrong/documents/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Node%E5%A4%9A%E7%BA%BF%E7%A8%8B(%E5%A4%9A%E8%BF%9B%E7%A8%8B)%E5%8E%9F%E7%90%862%20-%20cluster)，以及pm2这俩个常被用到类库，了解他们的使用场景和缺点。
+如果您已经阅读到此处，相信一定对Node的多进程机制原理有深刻理解了。劳驾高抬贵手star一下，然后我们继续深入[下一节cluster](https://github.com/jiajianrong/documents/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Node%E5%A4%9A%E7%BA%BF%E7%A8%8B(%E5%A4%9A%E8%BF%9B%E7%A8%8B)%E5%8E%9F%E7%90%862%20-%20cluster.md)，以及pm2这俩个常被用到类库，了解他们的使用场景和缺点。
 
 
 *58金融前端团队原创，转载请标注*
