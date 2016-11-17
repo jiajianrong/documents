@@ -214,7 +214,7 @@ worker_tcp_socket_more_workers_with_round_robin.js
 
 ## 被忽略的细节 ##
 
-细心的同学一定会发现这里的子进程逻辑和之前的不一样，没有了server.on('connection', fn)监听回调。 这是因为之前我们把父进程里的server自身发给了子进程，所以要在子进程里自己监听端口，注册回调。 而现在我们的父进程自身监听server的connection事件，子进程只获得父进程派发的socket，所以子进程里直接调用socket write或end方法即可。
+细心的同学一定会发现这里的子进程逻辑和之前的不一样，没有了server.on('connection', fn)监听回调。 这是因为之前我们把父进程里的server自身发给了子进程，所以要在子进程里自己监听端口，注册回调。 而现在我们的父进程自身监听server的connection事件，子进程只获得父进程派发的socket连接请求，所以子进程里直接调用socket write或end方法即可。
 
 
 由此可见，实现round-robin算法负载均衡的父进程，和由子进程互相抢夺句柄的核心不同在于，
