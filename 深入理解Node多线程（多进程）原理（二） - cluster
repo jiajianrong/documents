@@ -1,7 +1,7 @@
 # 深入理解Node多线程（多进程）原理（二）- cluster #
 
 
-[上一节](https://github.com/jiajianrong/documents/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Node%E5%A4%9A%E8%BF%9B%E7%A8%8B(%E5%A4%9A%E7%BA%BF%E7%A8%8B)%E5%8E%9F%E7%90%86%EF%BC%88%E4%B8%80%EF%BC%89%20-%20child_process)我们分析了node child_process，本节将介绍node cluster模块
+在[上一节](https://github.com/jiajianrong/documents/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Node%E5%A4%9A%E8%BF%9B%E7%A8%8B(%E5%A4%9A%E7%BA%BF%E7%A8%8B)%E5%8E%9F%E7%90%86%EF%BC%88%E4%B8%80%EF%BC%89%20-%20child_process) 我们分析了node child_process，本节将介绍node cluster模块
 
 
 
