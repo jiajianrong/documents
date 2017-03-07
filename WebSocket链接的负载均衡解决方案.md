@@ -3,7 +3,7 @@
 ######Load Balancing Websocket Connections
 
 
-想要对Websocket做负载均衡困难极了。可是我们并不能责怪谁。毕竟http诞生了快30年了，我们有足够的时间去沉淀一套完善的流量解决框架。可是Websocket仅仅在2011年成为标准。
+Websocket做负载均衡很困难。毕竟http诞生了快30年了，我们有足够的时间去沉淀一套完善的解决框架。可是Websocket仅仅在2011年成为标准。
 
 
 ##Websocket有什么问题？
