@@ -47,13 +47,13 @@ require模块暴露出来的对象是一个function。当把本地文件路径�
          'C:\\Program Files\\lib\\node' ] }
     >
 
-每一个module对象有一个id属性，通常是文件的全路径。但是在REPL里仅仅是<repl>
+每一个module对象有一个id属性，通常是文件的全路径。但是在REPL里仅仅是<repl\>
 
 Nodejs的module是和一个文件严格一一对应，我们require一个module时会把他对应的文件内容装入内存。
 
 不过既然nodejs有多种require文件的方式（如相对路径和预配置路径），我们需要先找到文件的绝对路径。
 
-当加载无路径的'find-me'模块时
+**当加载无路径的'find-me'模块时**
 
     require('find-me');
 
@@ -73,7 +73,7 @@ Nodejs会依次在下面目录里查找find-me.js
 
 这个列表基本上就是从当前路径下的node_modules目录，一直上寻至根路径的node_modules目录。除此之外还包含一些不被推荐的历史遗留路径。
 
-如果nodejs在上述路径下都没有找到find-me.js，它会扔出“cannot find module error”
+如果nodejs在上述路径下都没有找到find-me.js，它会扔出`cannot find module error`
 
     > require('find-me')
     Error: Cannot find module 'find-me'
@@ -107,7 +107,7 @@ Nodejs会依次在下面目录里查找find-me.js
     C:\>mkdir node_modules
     C:\>echo console.log(2222)>node_modules/find-me.js
 
-当我们在拥有node_modules/find-me.js的目录下执行require('find-me')时，根目录里的find-me.js不会被加载
+当我们在拥有`node_modules/find-me.js`的目录下执行`require('find-me')`时，根目录里的find-me.js不会被加载
 
     C:\Users\58>
     C:\Users\58>node
@@ -115,7 +115,7 @@ Nodejs会依次在下面目录里查找find-me.js
     11111
     {}
 
-如果我们删除了本地路径下的node_modules/find_me.js文件，再去加载find-me，此时根目录下的node_modules/find-me.js将会被加载使用
+如果我们删除了本地路径下的`node_modules/find_me.js`文件，再去加载find-me，此时根目录下的`node_modules/find-me.js`将会被加载使用
 
     C:\Users\58>rm -r node_modules
     C:\Users\58>node
@@ -128,7 +128,7 @@ Nodejs会依次在下面目录里查找find-me.js
 
 ## Requiring一个目录 ##
 
-Module不一定非得是文件。我们也可以在node_module目录下创建一个find-me目录，并且放置index.js在里面。require('find-me')将会使用该目录下的index.js文件
+Module不一定非得是文件。我们也可以在node_module目录下创建一个find-me目录，并且放置index.js在里面。`require('find-me')`将会使用该目录下的index.js文件
 
     C:\Users\58>mkdir "node_modules/find-me"
     C:\Users\58>echo console.log(333)>./node_modules/find-me/index.js
@@ -301,7 +301,7 @@ config.json文件内容如下
 如果nodejs找不到.js和.json，它会尝试找.node，并按照编译好的插件模块解析。[官方范例]( https://nodejs.org/api/addons.html#addons_hello_world)
 
 
-事实上我们可以通过require.extensions查看这三种后缀的解析方式
+事实上我们可以通过`require.extensions`查看这三种后缀的解析方式
 	
 	> require.extensions['.js'].toString()
 	'function (module, filename) {\n  var content = fs.readFileSync(filename, \'utf8
@@ -398,7 +398,7 @@ Require对象也有自己的属性和方法，比如前面的resolve方法，ext
 	C:\Users\58\node_modules\find-me>node main.js
 	printjs
 
-可以发现第二个require并没有打印内容，因为print.js已经被缓存了。我们可以打印require.cache确认。
+可以发现第二个require并没有打印内容，因为print.js已经被缓存了。我们可以打印`require.cache`确认。
 
 	C:\Users\58\node_modules\find-me>echo require('./print.js');console.log(require.cache);require('./print.js')>main.js
 	C:\Users\58\node_modules\find-me>node main.js
