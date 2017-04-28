@@ -149,7 +149,7 @@ Module不一定非得是文件。我们也可以在node_module目录下创建一
     {}
 
 
-如果仅仅想找到module而不是执行它，可以使用require.resolve方法。该方法并不会加载文件内容，只是返回文件全路径
+如果仅仅想找到module而不是执行它，可以使用`require.resolve`方法。该方法并不会加载文件内容，只是返回文件全路径
 
     C:\Users\58>node
     > require.resolve('find-me')
@@ -200,7 +200,7 @@ index.js
 需注意我们不能使用 `exports=function(){}` 来设置exports对象。因为exports变量仅仅是module.exports的引用。当exports被设置时，仅仅是引用更新，而非更新module.exports
 
 
-接下来我们来看module对象的loaded属性。Module使用该属性来记录是否module已经被加载过了(true)，loaded为false则代表module正在被加载。
+接下来我们来看module对象的loaded属性。Module使用该属性来记录是否module已经被加载过了(loaded为false代表module正在被加载)
 
 index.js
 
@@ -216,7 +216,7 @@ index.js
 	  exports: { id: 'index_id' },
 	  parent: null,
 	  filename: 'C:\\Users\\58\\node_modules\\find-me\\index.js',
-	  loaded: false,
+	  **loaded: false,**
 	  children: [],
 	  paths:
 	   [ 'C:\\Users\\58\\node_modules\\find-me\\node_modules',
@@ -228,7 +228,7 @@ index.js
 	  exports: { id: 'index_id' },
 	  parent: null,
 	  filename: 'C:\\Users\\58\\node_modules\\find-me\\index.js',
-	  loaded: true,
+	  **loaded: true,**
 	  children: [],
 	  paths:
 	   [ 'C:\\Users\\58\\node_modules\\find-me\\node_modules',
