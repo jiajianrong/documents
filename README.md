@@ -1,7 +1,7 @@
 
-###均为原创，转载请注明出处 https://github.com/jiajianrong
+## 均为原创，转载请注明出处 [https://github.com/jiajianrong](https://github.com/jiajianrong)
 
-##
+
 
 [node使用Promise同步读文件](https://github.com/jiajianrong/documents/blob/master/node%E4%BD%BF%E7%94%A8Promise%E5%90%8C%E6%AD%A5%E8%AF%BB%E6%96%87%E4%BB%B6.md)
 
