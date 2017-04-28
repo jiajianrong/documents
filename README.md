@@ -18,6 +18,7 @@
 [WebSocket链接的负载均衡解决方案](https://github.com/jiajianrong/documents/blob/master/WebSocket%E9%93%BE%E6%8E%A5%E7%9A%84%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.md)
 
 
+[Nodejs的模块加载：一切你需要了解的都在这里](https://github.com/jiajianrong/documents/blob/master/Nodejs%E7%9A%84%E6%A8%A1%E5%9D%97%E5%8A%A0%E8%BD%BD%EF%BC%9A%E4%B8%80%E5%88%87%E4%BD%A0%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E7%9A%84%E9%83%BD%E5%9C%A8%E8%BF%99%E9%87%8C.md)
 
 
 ##
