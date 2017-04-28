@@ -10,7 +10,7 @@ Nodejs使用两个核心模块来管理模块依赖：
     const config = require('/path/to/file');
 
 
-require模块暴露出来的对象是一个function。当把本地文件路径当参数，调用require()时，nodejs执行顺序如下：
+require模块暴露出来的对象是一个function。当把本地文件路径当参数，调用require()时，**nodejs执行顺序如下**：
 
 - Resolving: 查找文件绝对路径
 - Loading: 确认文件类型
@@ -200,7 +200,9 @@ index.js
 需注意我们不能使用 `exports=function(){}` 来设置exports对象。因为exports变量仅仅是module.exports的引用。当exports被设置时，仅仅是引用更新，而非更新module.exports
 
 
-接下来我们来看module对象的loaded属性。Module使用该属性来记录是否module已经被加载过了(loaded为false代表module正在被加载)
+**接下来我们来看module对象的loaded属性**
+
+Module使用该属性来记录是否module已经被加载过了(loaded为false代表module正在被加载)
 
 index.js
 
@@ -216,7 +218,7 @@ index.js
 	  exports: { id: 'index_id' },
 	  parent: null,
 	  filename: 'C:\\Users\\58\\node_modules\\find-me\\index.js',
-	  **loaded: false,**
+	  loaded: false,
 	  children: [],
 	  paths:
 	   [ 'C:\\Users\\58\\node_modules\\find-me\\node_modules',
@@ -228,7 +230,7 @@ index.js
 	  exports: { id: 'index_id' },
 	  parent: null,
 	  filename: 'C:\\Users\\58\\node_modules\\find-me\\index.js',
-	  **loaded: true,**
+	  loaded: true,
 	  children: [],
 	  paths:
 	   [ 'C:\\Users\\58\\node_modules\\find-me\\node_modules',
@@ -237,7 +239,7 @@ index.js
 	     'C:\\node_modules' ] }
 
 
-当nodejs完成module的加载，exports对象就可以使用了。整个requiring/loading模块是同步的。所以在一个event loop后，module对象就是loaded状态了。
+当nodejs完成module的加载，exports对象就可以使用了。**整个requiring/loading模块是同步的**。所以在一个event loop后，module对象就是loaded状态了。
 
 
 
@@ -269,7 +271,7 @@ lib/module2.js
 
 我们在module1全部加载之前require了module2，同时因为module2 require了module1，我们此时得到的module1的exports是不完整的：只有a属性
 
-Nodejs选择最简单的方式。在loading一个module的过程中，nodejs创建了其exports对象。你可以在module loading完成之前，在其他module中require这个module。你会得到一个“非完整版的”exports。
+**Nodejs选择最简单的方式**。在loading一个module的过程中，nodejs创建了其exports对象。你可以在module loading完成之前，在其他module中require这个module。你会得到一个“非完整版的”exports。
 
 
 
@@ -277,11 +279,13 @@ Nodejs选择最简单的方式。在loading一个module的过程中，nodejs创�
 
 Nodejs能够使用require方法加载原生json文件及C++插件，甚至都无需指定文件后缀。
 
-如果文件后缀没有指定，nodejs会先尝试加载.js文件，找不到的话会尝试加载.json并以json格式解析。还找不到的话会加载二进制.node文件。不过如果不是.js文件的话，还是最好写清楚后缀。
+如果文件后缀没有指定，nodejs会先尝试加载.js文件，找不到的话会尝试加载.json并以json格式解析。还找不到的话会加载二进制.node文件。
+
+不过如果不是.js文件的话，还是最好写清楚后缀。
 
 Require json的例子：
 
-config.json文件内容如下
+config.json
 
 	{
 	  "host": "localhost",
@@ -328,7 +332,8 @@ config.json文件内容如下
 	  '\n});' ]
 
 
-Nodejs没有直接执行module里的代码。它先用wrapper把代码包起来，然后执行。这样就使得代码里声明的变量附加到module作用域上，不会污染全局
+Nodejs没有直接执行module里的代码。它先用wrapper把代码包起来，然后执行。**这样就使得代码里声明的变量附加到module作用域上，不会污染全局**
+
 
 wrapper方法有五个形参：`exports, require, module, __filename, __dirname`。因此它们看上去像是global，但其实不是。
 
@@ -440,11 +445,11 @@ Require对象也有自己的属性和方法，比如前面的resolve方法，ext
 
 可以删除该cache对象所对应的key值，以达到重新加载module的目的。
 
-当然最好的办法是在print.js里返回一个function，在main里调用该function，这样就可以彻底避免module缓存
-
 	require('./print.js');
 	delete require.cache['C:\\Users\\58\\node_modules\\find-me\\print.js']
 	require('./print.js')
+
+当然最好的办法是在print.js里返回一个function，在main里调用该function，这样就可以彻底避免module缓存
 
 
 
