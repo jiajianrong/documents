@@ -1,6 +1,6 @@
-# WebSocket链接的负载均衡解决方案
+# WebSocket链接的负载均衡解决方案 #
 
-######Load Balancing Websocket Connections######
+###### Load Balancing Websocket Connections ######
 
 
 Websocket做负载均衡很困难。毕竟http诞生了快30年了，我们有足够的时间去沉淀一套完善的解决框架。可是Websocket仅仅在2011年成为标准。
