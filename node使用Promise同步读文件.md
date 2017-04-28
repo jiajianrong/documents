@@ -1,8 +1,8 @@
 # nodejs使用Promise同步读文件
 
-转载请注明出处：[https://github.com/jiajianrong/documents/](https://github.com/jiajianrong/documents/)
 
-在译文[nodejs同步异步IO示范](https://github.com/jiajianrong/documents/blob/master/node%E5%90%8C%E6%AD%A5%E5%BC%82%E6%AD%A5IO%E7%A4%BA%E8%8C%83.md)中最后一个例子是同步读文件，读完成一个再读取下一个。跟随原作者老爷爷的思路，我使用了Promise递归回调。其实根本不用这么复杂。接下来我们使用Promise.then()方法实现同步操作。
+
+上一篇文章[nodejs同步异步IO示范](https://github.com/jiajianrong/documents/blob/master/node%E5%90%8C%E6%AD%A5%E5%BC%82%E6%AD%A5IO%E7%A4%BA%E8%8C%83.md)最后一个例子是同步读文件，读完成一个再读取下一个。跟随原作者老爷爷的思路，我使用了Promise递归回调。其实根本不用这么复杂。接下来我们使用Promise.then()方法实现同步操作。
 
 
 Promise.then的返回值若是一个promise的话，后续then里注册的回调方法(cb_next)会等待当前promise完成后执行，而且cb_next的形参也会改变为上一个promise的返回值。
@@ -194,4 +194,8 @@ Array.reduce第二个形参设置为sequence，可以免去定义全局变量。
 	}).then(function(){console.log('final: ',sum.totalBytes);})
 
 
-更多参考请见[google_dev](https://developers.google.com/web/fundamentals/getting-started/primers/promises)
+
+
+
+*[译自google_dev](https://developers.google.com/web/fundamentals/getting-started/primers/promises)
+转载请注明来自58金融前端团队*

@@ -1,8 +1,3 @@
-
-译自：http://stevehanov.ca/blog/index.php?id=127
-
-转载请注明出处：[https://github.com/jiajianrong/documents/](https://github.com/jiajianrong/documents/)
-
 # nodejs同步异步IO示范
 
 JavaScript并没有设计好异步操作。如果设计得当，编写异步代码应该和编写阻塞代码一样容易（注：此文较早，当时还没有ES6、7的async await，也难怪这位老爷爷抱怨）。结果导致开发人员不得不处理各种callback。
@@ -252,3 +247,8 @@ Promise默认很难处理串行操作。不过我们可以使用一些类库，�
 
 ## 为什么我脑子疼？
 我写了40年的代码。我使用过很多语言，只有JavaScript让我头疼，特别是是实现这么简单的功能。如果你有很多的异步操作，有选择的话还是考虑其他语言吧。(LOL)
+
+
+
+*[译自](http://stevehanov.ca/blog/index.php?id=127)
+转载请注明来自58金融前端团队*

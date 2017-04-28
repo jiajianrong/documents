@@ -91,7 +91,7 @@ Orchestration server / 业务server分配 方案则是另一种理念，它便�
 
 
 
-*[原文出处](https://deepstream.io/blog/load-balancing-websocket-connections/)
+*[译自deepstream](https://deepstream.io/blog/load-balancing-websocket-connections/)
 转载请注明来自58金融前端团队*
 
 
