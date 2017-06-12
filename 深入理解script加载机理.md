@@ -30,7 +30,7 @@
 
 上面例子中，浏览器并行加载js，并在`DOMContentLoaded`触发前，顺序执行它们。
 
-defer很快就变得一团糟糕：src属性和defer属性，采用script标签加载还是采用动态script加载，使得添加一段js一共有6种不同的方式。当然浏览器之间还会打架。Mozilla在2009年(发布声明)[https://hacks.mozilla.org/2009/06/defer/]反对使用defer。
+defer很快就变得一团糟糕：src属性和defer属性，采用script标签加载还是采用动态script加载，使得添加一段js一共有6种不同的方式。当然浏览器之间还会打架。Mozilla在2009年[发布声明](https://hacks.mozilla.org/2009/06/defer/)反对使用defer。
 
 对此whatwg官方做出澄清，规定defer不影响动态加载的js文件，也不影响以及缺少src的js代码。其他情形下defer script应该在document解析之后顺序执行。
 
@@ -295,7 +295,7 @@ Spec says: Download together, execute in order just before DOMContentLoaded. Ign
 
 IE < 10 says: I might execute 2.js halfway through the execution of 1.js. Isn’t that fun??
 
-The (browsers in red)[http://caniuse.com/#search=defer] say: I have no idea what this “defer” thing is, I’m going to load the scripts as if it weren’t there.
+The [browsers in red](http://caniuse.com/#search=defer) say: I have no idea what this “defer” thing is, I’m going to load the scripts as if it weren’t there.
 
 Other browsers say: Ok, but I might not ignore “defer” on scripts without “src”.
 
@@ -308,7 +308,7 @@ Async
 
 Spec says: Download together, execute in whatever order they download in.
 
-The (browsers in red)[http://caniuse.com/#search=async] say: What’s ‘async’? I’m going to load the scripts as if it weren’t there.
+The [browsers in red](http://caniuse.com/#search=async) say: What’s ‘async’? I’m going to load the scripts as if it weren’t there.
 
 Other browsers say: Yeah, ok.
 
@@ -332,9 +332,9 @@ Firefox < 3.6, Opera says: I have no idea what this “async” thing is, but it
 
 Safari 5.0 says: I understand “async”, but don’t understand setting it to “false” with JS. I’ll execute your scripts as soon as they land, in whatever order.
 
-IE < 10 says: No idea about “async”, but there is a (workaround)[https://www.html5rocks.com/en/tutorials/speed/script-loading/#interesting-ie] using “onreadystatechange”.
+IE < 10 says: No idea about “async”, but there is a [workaround](https://www.html5rocks.com/en/tutorials/speed/script-loading/#interesting-ie) using “onreadystatechange”.
 
-Other (browsers in red)[http://caniuse.com/#search=async] say: I don’t understand this “async” thing, I’ll execute your scripts as soon as they land, in whatever order.
+Other [browsers in red](http://caniuse.com/#search=async) say: I don’t understand this “async” thing, I’ll execute your scripts as soon as they land, in whatever order.
 
 Everything else says: I’m your friend, we’re going to do this by the book.
 
