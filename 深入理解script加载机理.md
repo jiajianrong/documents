@@ -3,7 +3,7 @@
 
 本文将讲述浏览器是如何加载并执行JS的。
 
-(whatwg的官方文档)[https://html.spec.whatwg.org/multipage/scripting.html#script]定义了各种加载及执行js的方式。看上去很绝望吧？这就是为什么本文会将其转译为人类可以读懂的语言。
+[whatwg的官方文档](https://html.spec.whatwg.org/multipage/scripting.html#script)定义了各种加载及执行js的方式。看上去很绝望吧？这就是为什么本文会将其转译为人类可以读懂的语言。
 
 
 
@@ -39,7 +39,7 @@ defer很快就变得一团糟糕：src属性和defer属性，采用script标签�
 
 ## 感谢IE(别当真，这次是挖苦的意思)
 
-IE4-9存在一个会(导致script标签无序执行的严重bug)[https://github.com/h5bp/lazyweb-requests/issues/42]
+IE4-9存在一个会[导致script标签无序执行的严重bug](https://github.com/h5bp/lazyweb-requests/issues/42)
 
 	<script src="//other-domain.com/1.js" defer></script>
 	<script src="2.js" defer></script>
@@ -79,7 +79,7 @@ HTML5引入了async属性，通常使用这一属性的前提会假定你不会�
 
 最理想的状况浏览器在不影响渲染的前提下，异步加载js文件并按顺序立即执行。但不幸的是HTML不支持。
 
-因此诞生了多种解决方案。一些需要我们改变js代码，将之包裹到一个回调函数中，然后顺序执行，如(requireJS)[http://requirejs.org/]。也有使用XHR并行加载，然后使用`eval()`顺序执行的解决方案。不过XHR不支持跨域，所以要求服务器设置(CORS header)[https://developer.mozilla.org/en-US/docs/HTTP/Access_control_CORS]以及浏览器能够支持。更有一些黑科技解决方案，如(LabJS)[http://labjs.com/]。
+因此诞生了多种解决方案。一些需要我们改变js代码，将之包裹到一个回调函数中，然后顺序执行，如[requireJS](http://requirejs.org/)。也有使用XHR并行加载，然后使用`eval()`顺序执行的解决方案。不过XHR不支持跨域，所以要求服务器设置[CORS header](https://developer.mozilla.org/en-US/docs/HTTP/Access_control_CORS)以及浏览器能够支持。更有一些黑科技解决方案，如[LabJS](http://labjs.com/)。
 
 黑科技的原理是诱导浏览器加载js资源，加载完成后仅仅触发成功事件而非立即执行。在LabJS里，script标签都被故意添加了错误的mime类型，例如`<script type="script/cache" src="...">`。
 
@@ -135,7 +135,7 @@ The async IDL attribute controls whether the element will execute asynchronously
 	<link rel="subresource" href="//other-domain.com/1.js">
 	<link rel="subresource" href="2.js">
 
-这会告诉浏览器，当前页面需要1.js和2.js。`link[rel=subresource]`和`link[rel=prefetch]`类型，只是(含义不同)[http://www.chromium.org/spdy/link-headers-and-server-hint/link-rel-subresource]。不幸的是它当前仅被很少的浏览器支持(如Chrome)，而且你声明script两次，一次是通过link元素，一次是script元素。
+这会告诉浏览器，当前页面需要1.js和2.js。`link[rel=subresource]`和`link[rel=prefetch]`类型，只是[含义不同](http://www.chromium.org/spdy/link-headers-and-server-hint/link-rel-subresource)。不幸的是它当前仅被很少的浏览器支持(如Chrome)，而且你声明script两次，一次是通过link元素，一次是script元素。
 
 纠正：其实提前加载link元素并不在预加载扫描阶段，而是在正常的dom解析阶段。但动态加载js仍然不会被提前预加载。
 
@@ -197,7 +197,7 @@ IE已经开始加载whatever.js了。而其他浏览器不会，它们会等到s
 
 把上面代码放置到body尾部。
 
-希望(JavaScript Module)[http://wiki.ecmascript.org/doku.php?id=harmony:modules]能够带来更好的解决办法。
+希望[JavaScript Module](http://wiki.ecmascript.org/doku.php?id=harmony:modules)能够带来更好的解决办法。
 
 
 
@@ -265,7 +265,7 @@ IE已经开始加载whatever.js了。而其他浏览器不会，它们会等到s
 	  "2.js"
 	])
 
-与简单的script标签置底相比，这真的值得吗？如果你有些script文件是通过动态有条件加载的话，(像BBC一样)[http://responsivenews.co.uk/post/18948466399/cutting-the-mustard]，你可能会因为提前加载而受益。否则基本没必要，还是直接置底吧。
+与简单的script标签置底相比，这真的值得吗？如果你有些script文件是通过动态有条件加载的话，[像BBC一样](http://responsivenews.co.uk/post/18948466399/cutting-the-mustard)，你可能会因为提前加载而受益。否则基本没必要，还是直接置底吧。
 
 
 

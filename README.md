@@ -1,5 +1,5 @@
 
-## 均为原创，转载请注明出处 [https://github.com/jiajianrong](https://github.com/jiajianrong)
+## 均为原创，转载请注明出自[58金融](https://github.com/jiajianrong)
 
 
 
@@ -19,6 +19,9 @@
 
 
 [Nodejs的模块加载：一切你需要了解的都在这里](https://github.com/jiajianrong/documents/blob/master/Nodejs%E7%9A%84%E6%A8%A1%E5%9D%97%E5%8A%A0%E8%BD%BD%EF%BC%9A%E4%B8%80%E5%88%87%E4%BD%A0%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E7%9A%84%E9%83%BD%E5%9C%A8%E8%BF%99%E9%87%8C.md)
+
+
+[深入理解script加载机理](https://github.com/jiajianrong/documents/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3script%E5%8A%A0%E8%BD%BD%E6%9C%BA%E7%90%86.md)
 
 
 ##
