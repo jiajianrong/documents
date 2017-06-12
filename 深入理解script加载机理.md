@@ -5,7 +5,7 @@
 
 [whatwg的官方文档](https://html.spec.whatwg.org/multipage/scripting.html#script)定义了各种加载及执行js的方式。看上去很绝望吧？这就是为什么本文会将其转译为人类可以读懂的语言。
 
-![](https://github.com/jiajianrong/MarkdownPhotos/blob/master/script-loading/asyncdefer.svg)
+![](https://github.com/jiajianrong/MarkdownPhotos/blob/master/script-loading/js-loading.png)
 
 
 ## 第一段js代码
