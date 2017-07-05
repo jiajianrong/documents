@@ -24,6 +24,9 @@
 [深入理解script加载机理](https://github.com/jiajianrong/documents/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3script%E5%8A%A0%E8%BD%BD%E6%9C%BA%E7%90%86.md)
 
 
+[深入Node debug - 步骤及原理](https://github.com/jiajianrong/documents/blob/master/%E6%B7%B1%E5%85%A5Node%20debug%20-%20%E6%AD%A5%E9%AA%A4%E5%8F%8A%E5%8E%9F%E7%90%86.md)
+
+
 ##
 mysql配置：show variables like 'character%';
 

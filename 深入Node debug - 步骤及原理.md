@@ -68,7 +68,7 @@ debug工具通常还会提供一个http服务显示被debug进程的metadata， 
 
 ## debug多个进程 或 仅debug子进程
 
-在父进程里使用spawn或者fork都可以启动debug子进程*(注：spawn默认不pipe子进程输出流，需要手动处理)*
+在父进程里使用spawn或者fork都可以启动debug子进程 *注：spawn默认不pipe子进程输出流，需要手动处理*
 
 ###### spawn写法
 	
