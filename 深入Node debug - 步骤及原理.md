@@ -72,17 +72,64 @@ debug工具通常还会提供一个http服务显示被debug进程的metadata， 
 
 ###### spawn写法
 	
-	spawn('node', ['--inspect-brk=9222', './child.js']).stdout.pipe(process.stdout)
-	// 或者
+	var p = spawn('node', ['--inspect-brk=9222', './child.js'])
+    p.stdout.pipe(process.stdout)
+    // 或者
+    p.stdout.on('data', data=>console.log(`stdout: ${data}`)  )
+	
+    // 或者
 	spawn('node', ['--inspect-brk=9222', './child.js'], {stdout: [0,1,2]})
 
 
 ###### fork写法
 
 	fork( './child.js', [], {execArgv: ['--inspect-brk=9222']} ).disconnect();
+    
+    // 也可以使用process.execArgv设置参数
+    process.execArgv = ['--inspect-brk=9226']
+    fork( './child.js' )
 
 
 
+
+## 附：顺便介绍一下pipe的用法
+
+读文件的输入流(in) pipe到 标准或写文件的输出流(out)
+
+    var fs = require('fs')
+    var ins = fs.createReadStream('./child.js', {encoding: 'utf8', mode: 0o666})
+    
+    ins.pipe(process.stdout);
+    // 或者
+    ins.pipe(fs.createWriteStream('./out.txt'));
+
+
+写文件的输出流 被pipe到 标准输出流
+
+    var fs = require('fs')
+    var outs = fs.createWriteStream('./out.txt')
+    
+    process.stdin.setEncoding('utf8')
+    process.stdin.pipe(outs)
+
+    
+    // 或者
+    var out = fs.createWriteStream('./out.txt')
+	
+	process.stdin.setEncoding('utf8')
+	
+	process.stdin.on('readable', () => {
+	    var chunk = process.stdin.read()
+	    if (chunk !== null) {
+	      process.stdout.write(`data: ${chunk}`)
+		  out.write(`data: ${chunk}`)
+	    }
+	});
+	
+	process.stdin.on('end', () => {
+	    process.stdout.write('end')
+	    out.write('end')
+	});
 
 
 
