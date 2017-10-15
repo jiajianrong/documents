@@ -1,4 +1,3 @@
-
 //var str = "99 -( 3-1)*3+40/20"
 //var str = "99 +( 3-1)*3*2+40/20"
 var str = "99 + 2*( 6-1*3)+40/20"
@@ -7,6 +6,7 @@ var str = "99 + 2*( 6-1*3)+40/20"
 //var str = "1-2*2+3"
 var str = "1+(2*(1+1))"
 
+// run
 var arr = prepare(str)
 console.log(nifix2postfix(arr))
 
@@ -106,10 +106,10 @@ function nifix2postfix(arr) {
 		} else if (isBraceL(curr)) {
 			stack.push(curr)
 		} else if (isBraceR(curr)) {
-			// ³öÕ»µ½(
+			// å‡ºæ ˆåˆ°(
 			r = r.concat( popUntilBraceL(stack) )
 		} else {
-			// currÓÅÏÈ¼¶<=Õ»¶¥·ûºÅ
+			// currä¼˜å…ˆçº§<=æ ˆé¡¶ç¬¦å·
 			while( isPriorityLowerOrEqualThanTarget(curr, stack[stack.length-1]) ) {
 				r.push( stack.pop() )
 			}
