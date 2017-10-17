@@ -1,15 +1,18 @@
 //var str = "99 -( 3-1)*3+40/20"
 //var str = "99 +( 3-1)*3*2+40/20"
-var str = "99 + 2*( 6-1*3)+40/20"
+var str = "5 + 2*( 4-1*3)+40/20" //9
 //var str = "3-1/(3*2)"
 //var str = "3-1/3*2"
 //var str = "1-2*2+3"
-var str = "1+(2*(1+1))"
+//var str = "1+(2*(1+1))"
 
 // run
 var arr = prepare(str)
-console.log(nifix2postfix(arr))
-
+console.log(arr)
+arr = nifix2postfix(arr)
+console.log(arr)
+arr = postfix2final(arr)
+console.log(arr)
 
 
 function prepare(str) {
@@ -125,6 +128,37 @@ function nifix2postfix(arr) {
 }
 
 
+
+function postfix2final(arr) {
+
+	var stack = []
+	
+	for (var i=0;i<arr.length;i++) {
+		var c = arr[i]
+		if (isNumber(c)) {
+			stack.push(c)
+		} else {
+			var n2 = +stack.pop()
+			var n1 = +stack.pop()
+			var r = action(c, n1, n2)
+			stack.push(r)
+			
+			if (i===arr.length-1) return r;
+		}
+	}
+	
+	
+	function isNumber(c) {
+		return !isNaN(+c)
+	}
+	function action(symbol, n1, n2) {
+		if (symbol==='+') return n1+n2
+		if (symbol==='-') return n1-n2
+		if (symbol==='*') return n1*n2
+		if (symbol==='/') return n1/n2
+	}
+
+}
 
 
 
