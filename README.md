@@ -23,6 +23,9 @@
 [深入Node debug - 步骤及原理](https://github.com/jiajianrong/documents/blob/master/%E6%B7%B1%E5%85%A5Node%20debug%20-%20%E6%AD%A5%E9%AA%A4%E5%8F%8A%E5%8E%9F%E7%90%86.md)
 
 
+[Middleware - koa](https://github.com/jiajianrong/documents/blob/master/hoc-koa2.js)
+
+
 [WebSocket链接的负载均衡解决方案](https://github.com/jiajianrong/documents/blob/master/WebSocket%E9%93%BE%E6%8E%A5%E7%9A%84%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.md)
 
 
@@ -30,6 +33,9 @@
 ## react
 
 [react diff children - 算法和优化](https://github.com/jiajianrong/documents/blob/master/react%20diff%20children%20-%20%E7%AE%97%E6%B3%95%E5%92%8C%E4%BC%98%E5%8C%96.md)
+
+
+[Middleware - redux](https://github.com/jiajianrong/documents/blob/master/hoc-redux.js)
 
 
 [深入理解script加载机理](https://github.com/jiajianrong/documents/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3script%E5%8A%A0%E8%BD%BD%E6%9C%BA%E7%90%86.md)
