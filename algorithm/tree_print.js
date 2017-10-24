@@ -59,12 +59,12 @@ function push_child(node) {
 		last = nextlast
 	}
 	
-	print_q();
+	printWidth();
 }
 
 
 
-function print_q() {
+function printWidth() {
 	if (queue.length==0) {return;}
 	
 	var node = queue.shift();
@@ -81,5 +81,5 @@ var queue = []
 queue.push(node1)
 var last = node1
 var nextlast
-print_q()
+printWidth()
 

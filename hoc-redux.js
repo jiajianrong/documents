@@ -74,7 +74,7 @@ function getPrice() {
  * middleware implement
  */
 function decorate(target, wrappers) {
-	return wrappers.reverse().concat(getPrice).reduceRight(function(p, c){
+	return wrappers.reverse().concat(target).reduceRight(function(p, c){
 		return c(p)
 	})
 }
