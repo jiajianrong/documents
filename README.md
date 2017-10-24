@@ -59,6 +59,9 @@
 [tree print](https://github.com/jiajianrong/documents/blob/master/algorithm/tree_print.js)
 
 
+[tree depth](https://github.com/jiajianrong/documents/blob/master/algorithm/tree_depth.js)
+
+
 [tree 序列化](https://github.com/jiajianrong/documents/blob/master/algorithm/tree_serialize.js)
 
 
