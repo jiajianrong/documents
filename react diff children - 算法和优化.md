@@ -24,9 +24,9 @@
     render() {
         return (
             <div className="Main">
-				<B/>
-				{ this.state.fake && (<B/>) }
-				<B/>
+                <B/>
+                { this.state.fake && (<B/>) }
+                <B/>
             </div>
         );
     }
