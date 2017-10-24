@@ -42,8 +42,11 @@
 
 #### 结论
 
-react通过为每一组children设置和缓存一组下标，然后遍历nextChildren，
-成功的把O(n^2)的数组(两个数组遍历)diff算法简化成了O(nlogn)(遍历一个数组+hash另一个)
+diff array的最标准方式是一个叫[Edit distance 最小编辑距离](http://www.dreamxu.com/books/dsa/dp/edit-distance.html)的算法O(nlogn)，react将其做了最大简化。
+
+**通过为每一组children设置和缓存一组下标，然后遍历nextChildren，
+react成功的把普通O(n^2)的数组(两个数组遍历)diff算法简化成了O(nlogn)(遍历一个数组+hash另一个)**
+
 
 #### 分析
 
@@ -106,3 +109,7 @@ react没有做太复杂判断，仅给一个`占位表达式`分配一个下标�
 上面写法，最好能为B和C加上key，进而重用dom，避免反复创建，如：
 
 	{ this.state.fake ? (<div><B key=".0"/><C key=".1"/></div>) : (<div><C key=".1"/><B key=".0"/></div>) }
+
+
+
+*参考:[react-indepth](https://developmentarc.gitbooks.io/react-indepth/content/patterns/rendering_different_content.html)，转载请注明来自58金融前端团队*
