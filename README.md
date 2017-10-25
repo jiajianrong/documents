@@ -38,6 +38,9 @@
 [Middleware - redux](https://github.com/jiajianrong/documents/blob/master/hoc-redux.js)
 
 
+[React fake框架](https://github.com/jiajianrong/documents/blob/master/react-framework.js)
+
+
 [深入理解script加载机理](https://github.com/jiajianrong/documents/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3script%E5%8A%A0%E8%BD%BD%E6%9C%BA%E7%90%86.md)
 
 
