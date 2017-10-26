@@ -1,14 +1,11 @@
-
 var app = new koa()
 app.use(logger())
 app.use(getDiscount)
-app.use(getPrice)
+app.use(getPrice2)
 app.listen(80)
 
 var mockCtx = { url: 'baidu.com', params: 'a=b' }
 app.accept(mockCtx)
-console.log(mockCtx)
-
 
 
 
@@ -34,32 +31,32 @@ function koa() {
 
 
 
-
-// -------------------
-// 生成中间件 最终函数
-// -------------------
 function compose(middleware) {
 	
 	return function(ctx, next) {
 		
+		return dispatch(0)
 		
-		function recursion(i) {
+		function dispatch(i) {
 			
 			var fn = middleware[i]
 			
 			if (!fn)
-				return
+				return Promise.resolve()
 			
-			fn(ctx, function(){
-				recursion(i+1)
-			})
+			try {
+				return Promise.resolve( fn(ctx, function n(){
+					return dispatch(i+1)
+				}) )
+			} catch(err) {
+				return Promise.reject(err)
+			}
 		}
-		
-		return recursion(0)
 	
 	}
 
 }
+
 
 
 
@@ -67,10 +64,12 @@ function compose(middleware) {
 
 function logger(cfg) {
 
-	return function(ctx, next) {
+	return async function(ctx, next) {
+		
 		console.log('logger start')
-		next()
+		await next()
 		console.log('logger end')
+		
 	}
 
 }
@@ -78,22 +77,35 @@ function logger(cfg) {
 
 
 
-function getDiscount(ctx, next) {
+async function getDiscount(ctx, next) {
 	
 	console.log('getDiscount')
 	ctx.discount = 0.9
-	next()
+	await next()
 	
 }
 
 
 
 
-function getPrice(ctx) {
+async function getPrice2(ctx) {
+	
+	var price = await fetchPriceRemote()
+	ctx.body = price * ctx.discount
+	console.log(ctx)
+	
+}
 
-	console.log('getPrice')
-	ctx.price = 100
-	ctx.body = "final price is " + ( ctx.price * ctx.discount )
+
+
+
+function fetchPriceRemote() {
+	
+	return new Promise(function(resolve, reject) {
+		setTimeout( function(){
+			resolve(100)
+		}, 2000 )
+	})
 	
 }
 
