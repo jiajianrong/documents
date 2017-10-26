@@ -59,7 +59,7 @@
 [str match kpm](https://github.com/jiajianrong/documents/blob/master/algorithm/str_match_kmp.js)
 
 
-[str match kpm next算法](https://github.com/jiajianrong/documents/blob/master/algorithm/str_match_kmp_next.js)
+[str match kpm next](https://github.com/jiajianrong/documents/blob/master/algorithm/str_match_kmp_next.js)
 
 
 [tree print](https://github.com/jiajianrong/documents/blob/master/algorithm/tree_print.js)

@@ -9,9 +9,7 @@ console.log(ff())
 
 
 
-/**
- * 包裹打印功能
- */
+
 function logger(f) {
 
 	return function(){
@@ -25,9 +23,7 @@ function logger(f) {
 
 
 
-/**
- * 包裹固定折扣
- */
+
 function getDiscount(f) {
 	
 	return function(){
@@ -39,9 +35,7 @@ function getDiscount(f) {
 
 
 
-/**
- * 自定义折扣 工厂方法
- */
+
 function discountFactory(discount) {
 
 	function getDiscount(f) {
@@ -59,9 +53,7 @@ function discountFactory(discount) {
 
 
 
-/**
- * 目标方法 获取价格
- */
+
 function getPrice() {
 	console.log('getPrice')
 	return 100;
@@ -70,9 +62,7 @@ function getPrice() {
 
 
 
-/**
- * middleware implement
- */
+
 function decorate(target, wrappers) {
 	return wrappers.reverse().concat(target).reduceRight(function(p, c){
 		return c(p)
