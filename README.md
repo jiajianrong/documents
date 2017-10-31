@@ -80,6 +80,9 @@
 [硬币组合 1](https://github.com/jiajianrong/documents/blob/master/algorithm/coin_combination.js)
 
 
+[硬币组合 1 动态规划](https://github.com/jiajianrong/documents/blob/master/algorithm/coin_combination_dp.js)
+
+
 [硬币组合 2](https://github.com/jiajianrong/documents/blob/master/algorithm/coin_combination_2.js)
 
 
