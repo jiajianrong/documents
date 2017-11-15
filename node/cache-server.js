@@ -3,7 +3,7 @@ var fs = require('fs');
 http.createServer(function(req, res) {
     if (req.url === '/' || req.url === '' || req.url === '/index.html') {
         // <html><body><img src="cache.png"></body></html>
-		fs.readFile('./index.html', function(err, file) {
+        fs.readFile('./index.html', function(err, file) {
             res.setHeader('Cache-Control', "no-cache");
             res.setHeader('Content-Type', 'text/html');
             res.writeHead('200');
