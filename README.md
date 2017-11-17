@@ -23,16 +23,22 @@
 [深入Node debug - 步骤及原理](https://github.com/jiajianrong/documents/blob/master/node/%E6%B7%B1%E5%85%A5Node%20debug%20-%20%E6%AD%A5%E9%AA%A4%E5%8F%8A%E5%8E%9F%E7%90%86.md)
 
 
-[Middleware - koa](https://github.com/jiajianrong/documents/blob/master/node/hoc-koa2.js)
+[Middleware 原理 - koa](https://github.com/jiajianrong/documents/blob/master/node/hoc-koa2.js)
 
 
-[Middleware - koa async](https://github.com/jiajianrong/documents/blob/master/node/hoc-koa2-async.js)
+[Middleware 原理 - koa async](https://github.com/jiajianrong/documents/blob/master/node/hoc-koa2-async.js)
 
 
-[cache server](https://github.com/jiajianrong/documents/blob/master/node/cache-server.js)
+[cache server 原理](https://github.com/jiajianrong/documents/blob/master/node/cache-server.js)
 
 
 [WebSocket链接的负载均衡解决方案](https://github.com/jiajianrong/documents/blob/master/node/WebSocket%E9%93%BE%E6%8E%A5%E7%9A%84%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.md)
+
+
+[nodejs koa bigpipe 原理](https://github.com/jiajianrong/koa_bigpipe_demo)
+
+
+[浏览器localstorage缓存静态资源 + 服务器端合并请求](https://github.com/jiajianrong/localstorage_combo_demo)
 
 
 
@@ -41,10 +47,10 @@
 [react diff children - 算法和优化](https://github.com/jiajianrong/documents/blob/master/react/react%20diff%20children%20-%20%E7%AE%97%E6%B3%95%E5%92%8C%E4%BC%98%E5%8C%96.md)
 
 
-[Middleware - redux](https://github.com/jiajianrong/documents/blob/master/react/hoc-redux.js)
+[Middleware 原理 - redux](https://github.com/jiajianrong/documents/blob/master/react/hoc-redux.js)
 
 
-[React fake框架](https://github.com/jiajianrong/documents/blob/master/react/react-framework.js)
+[React fake 框架](https://github.com/jiajianrong/documents/blob/master/react/react-framework.js)
 
 
 [深入理解script加载机理](https://github.com/jiajianrong/documents/blob/master/react/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3script%E5%8A%A0%E8%BD%BD%E6%9C%BA%E7%90%86.md)
