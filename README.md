@@ -99,8 +99,16 @@
 
 ## 其他
 
-mysql配置：show variables like 'character%';
-
+	mysql：
+		show variables like 'character%';
+	
+	npm:
+		npm config set prefix "D:\node8\env\node-global"
+		npm config set cache  "D:\node8\env\node-cache"
+		npm config set tmp    "D:\node8\env\node-tmp"
+		
+		npm config ls
+		npm config ls -l
 
 
 
