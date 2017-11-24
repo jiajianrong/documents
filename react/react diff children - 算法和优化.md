@@ -45,7 +45,7 @@
 diff array的最标准方式是一个叫[Edit distance 最小编辑距离](http://www.dreamxu.com/books/dsa/dp/edit-distance.html)的算法O(nlogn)，react将其做了最大简化。
 
 **通过为每一组children设置和缓存一组下标，然后遍历nextChildren，
-react成功的把普通O(n^2)的数组(两个数组遍历)diff算法简化成了O(nlogn)(遍历一个数组+hash另一个)**
+react成功的把普通O(n^2)的数组(两个数组遍历)diff算法简化成了O(n)(遍历一个数组+hash另一个)**
 
 
 #### 分析

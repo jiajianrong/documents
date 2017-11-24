@@ -50,6 +50,9 @@
 [Middleware 原理 - redux](https://github.com/jiajianrong/documents/blob/master/react/hoc-redux.js)
 
 
+[reducer与store的本质](https://github.com/jiajianrong/documents/blob/master/react/reducer与store的本质.md)
+
+
 [React fake 框架](https://github.com/jiajianrong/documents/blob/master/react/react-framework.js)
 
 
