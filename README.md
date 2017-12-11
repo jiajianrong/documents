@@ -32,6 +32,9 @@
 [cache server 原理](https://github.com/jiajianrong/documents/blob/master/node/cache-server.js)
 
 
+[异步err处理](https://github.com/jiajianrong/documents/blob/master/node/err-handle.js)
+
+
 [详解 request](https://github.com/jiajianrong/documents/blob/master/node/详解request.md)
 
 
