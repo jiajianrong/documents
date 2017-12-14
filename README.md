@@ -108,8 +108,11 @@
 
 ## 其他
 
-	mysql：
+	mysql:
 		show variables like 'character%';
+        
+    Chrome mock Android:
+        "D:\Program Files\Google\Chrome\Application\chrome.exe" --user-agent="Android"
 	
 	npm:
 		npm config set prefix "D:\node8\env\node-global"
