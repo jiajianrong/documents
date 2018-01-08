@@ -53,7 +53,7 @@
 [react diff children - 算法和优化](https://github.com/jiajianrong/documents/blob/master/react/react%20diff%20children%20-%20%E7%AE%97%E6%B3%95%E5%92%8C%E4%BC%98%E5%8C%96.md)
 
 
-[react 事务机制](https://github.com/jiajianrong/documents/blob/master/react/react 事务机制.md)
+[react 事务机制](https://github.com/jiajianrong/documents/blob/master/react/react事务机制.md)
 
 
 [Middleware 原理 - redux](https://github.com/jiajianrong/documents/blob/master/react/hoc-redux.js)
