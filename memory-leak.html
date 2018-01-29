@@ -1,0 +1,70 @@
+<html>
+<head>
+<script>
+/*
+// 不会泄露
+window.onload = function(){
+
+    function add() {
+
+        var el = document.createElement('div')
+        el.innerHTML = "xxx"
+        el.addEventListener('click', function(){
+            var str1 = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            var str2 = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            alert('click')
+        })
+        document.body.appendChild(el)
+        
+        setTimeout(function(){
+            document.body.removeChild(document.body.children[0])
+        }, 10000)
+    }
+
+
+    setTimeout(function(){
+        for (var i=0;i<5000;i++) add()
+    }, 10000)
+
+}
+*/
+
+
+
+
+window.arr = []
+
+window.onload = function(){
+
+    function add() {
+        
+        var el = document.createElement('div')
+        el.innerHTML = "xxx"
+        el.addEventListener('click', function(){
+            var str1 = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            var str2 = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            alert('click')
+        })
+        document.body.appendChild(el)
+        
+        // 会泄露
+        arr.push(el)
+    }
+
+
+    setTimeout(function(){
+        for (var i=0;i<5000;i++) add()
+    }, 10000)
+    
+    setTimeout(function(){
+        //for (var i=0;i<5000;i++) document.body.removeChild(document.body.children[0])
+        document.body.innerHTML = ""
+    }, 20000)
+
+}
+</script>
+</head>
+
+
+<body></body>
+</html>
