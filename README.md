@@ -127,8 +127,8 @@
 		
 		npm config ls
 		npm config ls -l
-
-
-
+	
+	RegExp:
+		"金融街第三方所发生的".replace(/(?<=.{1}).(?=.{1})/g, '*')
 
 
