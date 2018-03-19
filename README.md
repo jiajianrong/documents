@@ -134,4 +134,6 @@
 	RegExp:
 		"金融街第三方所发生的".replace(/(?<=.{1}).(?=.{1})/g, '*')
 
+	shell:
+		find /home/work/trace-analysis/new-trace-analysis/infoData/ -name "2017-12*" |awk '{print "rm -rf " $1}'|sh
 
