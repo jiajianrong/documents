@@ -41,6 +41,9 @@
 [WebSocket链接的负载均衡解决方案](https://github.com/jiajianrong/documents/blob/master/node/WebSocket%E9%93%BE%E6%8E%A5%E7%9A%84%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.md)
 
 
+[文件描述符](https://github.com/jiajianrong/documents/blob/master/node/文件描述符.md)
+
+
 [nodejs koa bigpipe 原理](https://github.com/jiajianrong/koa_bigpipe_demo)
 
 
