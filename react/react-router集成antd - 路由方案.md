@@ -59,7 +59,7 @@ antd被普遍使用到后台管理系统，一般左侧为antd的Menu及Menu.Ite
 
 antd为Menu提供了 `selectedKeys` 修改选中Item的key值。我们只需要在浏览器前进后退及刷新时，修改这个值即可
 
-那么如何识别浏览器前进后退呢？ react-router 为 <Route>组件注入了几个常用的props，包含`match, location, history`。每次路由变化时，location prop也会变化，因此在<Route>组件的更新生命周期的任何方法，都可以得到当前的`location.pathname`，然后做适当适配即可赋值给<Menu>的`selectedKeys`属性
+那么如何识别浏览器前进后退呢？ react-router 为 <Route>组件注入了几个常用的props，包含`match, location, history`。每次路由变化时，location prop也会变化，因此在<Route>组件的更新生命周期的任何方法，都可以得到当前的`location.pathname`，然后做适当适配即可赋值给`<Menu>`的`selectedKeys`属性
 
 
 ## 解决
@@ -73,7 +73,7 @@ antd为Menu提供了 `selectedKeys` 修改选中Item的key值。我们只需要�
 	</Router>
 
 
-####App.js
+#### App.js
 
 关键点在于Menu.Item的key值 要和 props里的location.pathname值 对应起来，这样在路由变化时，直接将后者少许变换即可赋值给前者
 
