@@ -4,14 +4,14 @@ antd被普遍使用到后台管理系统，一般左侧为antd的Menu及Menu.Ite
 
 #### index.js
 
-	<Router>
-		<App/>
-	</Router>
+    <Router>
+        <App/>
+    </Router>
 
 
 #### App.js
 
-	<Sider collapsible>
+    <Sider collapsible>
         <Menu theme="dark" 
             defaultSelectedKeys={['/']}
             >
@@ -34,9 +34,9 @@ antd被普遍使用到后台管理系统，一般左侧为antd的Menu及Menu.Ite
     </Sider>
 
 
-	<Switch>
+    <Switch>
         {/* 首页 */}
-		<Route exact path="/" component={Home}/>
+        <Route exact path="/" component={Home}/>
         {/* 对账管理 */}
         <Route path="/ChannelCharge" component={ChannelCharge}/>
         {/* 计费管理 */}
@@ -68,9 +68,9 @@ antd为Menu提供了 `selectedKeys` 修改选中Item的key值。我们只需要�
 
 需要修改原有的 `<App/>` 写法，为 App 组件提供必须的 `props: {match, location, history}`
 
-	<Router>
-		<Route component={App}/>
-	</Router>
+    <Router>
+        <Route component={App}/>
+    </Router>
 
 
 #### App.js
@@ -79,11 +79,11 @@ antd为Menu提供了 `selectedKeys` 修改选中Item的key值。我们只需要�
 
 这里采用了一级路由相同，即认为是同路由，大大简化了匹配计算过程
 
-	
-	let totalPath = this.props.location.pathname
+    
+    let totalPath = this.props.location.pathname
     let prefixPath = totalPath.match(/^\/[^/]*/)[0]
 
-	<Sider collapsible>
+    <Sider collapsible>
         <Menu theme="dark" 
             defaultSelectedKeys={['/']}
             mode="inline"
