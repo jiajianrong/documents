@@ -11,10 +11,10 @@
 [node同步异步IO示范](https://github.com/jiajianrong/documents/blob/master/node/node同步异步IO示范.md)
 
 
-[深入理解Node多进程(多线程)原理1 - child_process](https://github.com/jiajianrong/documents/blob/master/node/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Node%E5%A4%9A%E8%BF%9B%E7%A8%8B(%E5%A4%9A%E7%BA%BF%E7%A8%8B)%E5%8E%9F%E7%90%861%20-%20child_process.md)
+[nodejs多进程原理1-child_process](https://github.com/jiajianrong/documents/blob/master/node/nodejs多进程原理1-child_process.md)
 
 
-[深入理解Node多线程(多进程)原理2 - cluster](https://github.com/jiajianrong/documents/blob/master/node/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Node%E5%A4%9A%E7%BA%BF%E7%A8%8B(%E5%A4%9A%E8%BF%9B%E7%A8%8B)%E5%8E%9F%E7%90%862%20-%20cluster.md)
+[nodejs多线程原理2-cluster](https://github.com/jiajianrong/documents/blob/master/node/nodejs多线程原理2-cluster.md)
 
 
 [nodejs的模块加载：一切你需要了解的都在这里](https://github.com/jiajianrong/documents/blob/master/node/nodejs的模块加载：一切你需要了解的都在这里.md)

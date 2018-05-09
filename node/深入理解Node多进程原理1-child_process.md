@@ -1,4 +1,4 @@
-# 深入理解Node多进程(多线程)原理1 - child_process #
+# 深入理解Node多进程原理1-child_process #
 
 
 
@@ -67,15 +67,15 @@ master.js
 
     var fork = require('child_process').fork;
     for(var i=0; i<4; i++) {
-    	fork('./worker.js');
+        fork('./worker.js');
     }
 
 worker.js
 
     var http = require('http');
     http.createServer(function(req, res){
-    	res.writeHead(200, {'Content-Type': 'text/plain'});
-    	res.end('Hello world\n');
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.end('Hello world\n');
     }).listen(Math.round((1+Math.random())*1000), '127.0.0.1');
 
 主进程创建四个子进程，每个子进程都是一个httpserver，监听一个1000至2000的随机端口。
@@ -94,15 +94,15 @@ master_tcp_socket.js
     var worker = require('child_process').fork('worker_tcp_socket.js');
     var server = require('net').createServer();
     server.listen(3001, function(){
-    	worker.send(null, server); // server即是句柄
+        worker.send(null, server); // server即是句柄
     })
 
 worker_tcp_socket.js
 
     process.on('message', function(p1, server){
-    	server.on('connection', function(socket){
-    		socket.end('this is worker\n');
-    	})
+        server.on('connection', function(socket){
+            socket.end('this is worker\n');
+        })
     })
 
 如此即可轻松实现父进程向子进程派发server句柄。如此即实现里主进程master把任务工作"委托"给子进程worker。接下来的改进生成多个worker，实现"一起监听"80端口。
@@ -113,18 +113,18 @@ master_tcp_socket_more_workers.js
     var worker_2 = require('child_process').fork('worker_tcp_socket_more_workers.js');
     var server = require('net').createServer();
     server.listen(80, function(){
-    	worker_1.send(null, server);
-    	worker_2.send(null, server);
-    	server.close();
+        worker_1.send(null, server);
+        worker_2.send(null, server);
+        server.close();
     })
 
 worker_tcp_socket_more_workers.js
 
     process.on('message', function(p1, server){
-    	var id = Math.random(); // 为不同子进程创建了不同的随机id
-    	server.on('connection', function(socket){
-    		socket.end(`this is worker ${id}\n`);
-    	})
+        var id = Math.random(); // 为不同子进程创建了不同的随机id
+        server.on('connection', function(socket){
+            socket.end(`this is worker ${id}\n`);
+        })
     })
 
 需要注意的是上面代码里的子进程是抢占式的，只有一个能抢到连接。显然达不到负载均衡的效果。
@@ -138,23 +138,23 @@ cluster以及大名鼎鼎的pm2默认是使用round-robin算法实现负载均�
 round-robin模拟实现逻辑
 
     var workers = {
-    	queue: [],
-    	current: 0,
-    	// init方法仅仅生成子进程数组，这里我们用{id: , send:}对象模拟
-    	init: function(count) {
-    		for(i=0; i<count; i++) {
-    			var w = {id: i, 
-    					 send: function(s){
-    						console.log(`worker ${this.id} send ${s}`)
-    					 }}
-    			this.queue.push(w);
-    		}
-    	},
-    	// 每次take任务时，使用当前数组下标，然后下标++
-    	take: function(server) {
-    		this.queue[this.current++].send(server);
-    		if (this.current==this.queue.length) this.current = 0;
-    	}
+        queue: [],
+        current: 0,
+        // init方法仅仅生成子进程数组，这里我们用{id: , send:}对象模拟
+        init: function(count) {
+            for(i=0; i<count; i++) {
+                var w = {id: i, 
+                    send: function(s){
+                        console.log(`worker ${this.id} send ${s}`)
+                    }}
+                this.queue.push(w);
+            }
+        },
+        // 每次take任务时，使用当前数组下标，然后下标++
+        take: function(server) {
+            this.queue[this.current++].send(server);
+            if (this.current==this.queue.length) this.current = 0;
+        }
     }
     
     // 调用逻辑
@@ -189,23 +189,23 @@ master_tcp_socket_more_workers_with_round_robin.js
     var all = ''
     
     server.on('connection', function(socket){
-    	var worker = workers.shift();	
-    	
-    	var desc = `request  ${count++} handled by process: ${worker.pid}\n`
-    	all += desc
-    	console.log(desc);
-    	
-    	// 为了简化代码，使用更改数组对象的方式实现轮询
-    	// 生成环境中不建议这么做
-    	worker.send(all, socket);
-    	workers.push(worker);
+        var worker = workers.shift();    
+        
+        var desc = `request  ${count++} handled by process: ${worker.pid}\n`
+        all += desc
+        console.log(desc);
+        
+        // 为了简化代码，使用更改数组对象的方式实现轮询
+        // 生成环境中不建议这么做
+        worker.send(all, socket);
+        workers.push(worker);
     })
 
 
 worker_tcp_socket_more_workers_with_round_robin.js
 
-    process.on('message', function(p1, server){
-    	server.end(p1);
+    process.on('message', function(p1, socket){
+        socket.end(p1);
     })
 
 
@@ -225,7 +225,7 @@ worker_tcp_socket_more_workers_with_round_robin.js
 
 ## More ##
 
-如果您已经阅读到此处，相信一定对Node的多进程机制原理有深刻理解了。劳驾高抬贵手star一下，然后我们继续深入[下一节cluster](https://github.com/jiajianrong/documents/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Node%E5%A4%9A%E7%BA%BF%E7%A8%8B(%E5%A4%9A%E8%BF%9B%E7%A8%8B)%E5%8E%9F%E7%90%862%20-%20cluster.md)，以及pm2这俩个常被用到类库，了解他们的使用场景和缺点。
+如果您已经阅读到此处，相信一定对Node的多进程机制原理有深刻理解了。劳驾高抬贵手star一下，然后我们继续深入[下一节cluster](https://github.com/jiajianrong/documents/blob/master/node/nodejs多线程原理2-cluster.md)，以及pm2这俩个常被用到类库，了解他们的使用场景和缺点。
 
 
 *58金融前端团队原创，转载请标注*

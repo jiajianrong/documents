@@ -1,7 +1,7 @@
 # 深入理解Node多线程(多进程)原理2 - cluster #
 
 
-在[上一节](https://github.com/jiajianrong/documents/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Node%E5%A4%9A%E8%BF%9B%E7%A8%8B(%E5%A4%9A%E7%BA%BF%E7%A8%8B)%E5%8E%9F%E7%90%861%20-%20child_process.md) 我们分析了node child_process，本节将介绍node cluster模块
+在[上一节](https://github.com/jiajianrong/documents/blob/master/node/nodejs多进程原理1-child_process.md) 我们分析了node child_process，本节将介绍node cluster模块
 
 
 
@@ -16,19 +16,19 @@
     if (cluster.isMaster) {
     // Fork workers.
     for (var i = 0; i < numCPUs; i++) {
-    	cluster.fork();
+        cluster.fork();
     }
     
     cluster.on('exit', (worker, code, signal) => {
-    	console.log(`worker ${worker.process.pid} died`);
+        console.log(`worker ${worker.process.pid} died`);
     });
     } else {
-    	// Workers can share any TCP connection
-    	// In this case it is an HTTP server
-    	http.createServer((req, res) => {
-    		res.writeHead(200);
-    		res.end('hello world\n');
-    	}).listen(8000);
+        // Workers can share any TCP connection
+        // In this case it is an HTTP server
+        http.createServer((req, res) => {
+            res.writeHead(200);
+            res.end('hello world\n');
+        }).listen(8000);
     }
 
 多个工作进程共同监听8000端口，其本质还是上节讲的 child_process.fork()
@@ -38,7 +38,7 @@ cluster支持两种分发连接的方式：
 - 在除Windows系统之外的所有其他系统上，使用上节所提到的round-robin算法：主进程监听端口，接受socket连接并将之平均分配给所有子进程
 - 在Windows系统上，主进程创建server，直接把server本身发给子进程。这么一来子进程直接接受socket连接，和主进程无关了（当然也就不能负载均衡）
 
-两种方式的具体分析和demo [上一节](https://github.com/jiajianrong/documents/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Node%E5%A4%9A%E8%BF%9B%E7%A8%8B(%E5%A4%9A%E7%BA%BF%E7%A8%8B)%E5%8E%9F%E7%90%861%20-%20child_process.md)已经讲述的很清楚了，这里不做介绍。
+两种方式的具体分析和demo 上一节已经讲述的很清楚了，这里不做介绍。
 
 
 
@@ -68,18 +68,18 @@ cluster_demo_master_only.js
     var numCPUs = require('os').cpus().length;
     
     if (cluster.isMaster) {
-    	console.log("start master...");
-    	
-    	for (var i = 0; i < numCPUs; i++) {
-     		cluster.fork();
-    	}
+        console.log("start master...");
+        
+        for (var i = 0; i < numCPUs; i++) {
+             cluster.fork();
+        }
     
-    	cluster.on('listening', function (worker, address) {
-    		console.log(`master listening: worker ${worker.id}, pid ${worker.process.pid}, Address ${address.address} ${address.port}`);
-    	});
+        cluster.on('listening', function (worker, address) {
+            console.log(`master listening: worker ${worker.id}, pid ${worker.process.pid}, Address ${address.address} ${address.port}`);
+        });
     
     } else if (cluster.isWorker) {
-    	require('./cluster_demo_worker_only.js');
+        require('./cluster_demo_worker_only.js');
     }
 
 
@@ -88,11 +88,11 @@ cluster_demo_worker_only.js
     var http = require('http');
     
     http.createServer(function(req, res){
-    	res.writeHead(200, {'Content-Type': 'text/plain'});
-    	res.end(`Hello world`);
-    	
-    	console.log(process.pid)
-    	// for(var i=0;i<10000000000;i++) var j=i+1;
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.end(`Hello world`);
+        
+        console.log(process.pid)
+        // for(var i=0;i<10000000000;i++) var j=i+1;
     
     }).listen(8888, '127.0.0.1');
 
@@ -114,30 +114,30 @@ cluster_demo_master_only_communicate.js
     var cluster = require('cluster');
     
     if (cluster.isMaster) {
-    	console.log("start master...");
-    	
-    	for (var i = 0; i < 4; i++) {
-     		cluster.fork();
-    	}
-    	
-    	cluster.on('listening', function (worker, address) {
-    		console.log(`master listening: worker ${worker.id}, pid ${worker.process.pid}, Address ${address.address} ${address.port}`);
-    	});
-    	
-    	// 在父进程里为每个子进程都注册监听事件，如此当某个子进程在其自身process.send时，
-		// 确保父进程可以监听到，然后再派发给所有子进程
-    	Object.keys(cluster.workers).forEach((id) => {
-    		cluster.workers[id].on('message', function(msg){
-    			Object.keys(cluster.workers).forEach((id) => {
-    				cluster.workers[id].send(msg);
-    			});
-    			
-    		});
-    	});
-    	
+        console.log("start master...");
+        
+        for (var i = 0; i < 4; i++) {
+            cluster.fork();
+        }
+        
+        cluster.on('listening', function (worker, address) {
+            console.log(`master listening: worker ${worker.id}, pid ${worker.process.pid}, Address ${address.address} ${address.port}`);
+        });
+        
+        // 在父进程里为每个子进程都注册监听事件，如此当某个子进程在其自身process.send时，
+        // 确保父进程可以监听到，然后再派发给所有子进程
+        Object.keys(cluster.workers).forEach((id) => {
+            cluster.workers[id].on('message', function(msg){
+                Object.keys(cluster.workers).forEach((id) => {
+                    cluster.workers[id].send(msg);
+                });
+                
+            });
+        });
+        
     
     } else if (cluster.isWorker) {
-    	require('./cluster_demo_worker_only_communicate.js');
+        require('./cluster_demo_worker_only_communicate.js');
     }
     
 
@@ -146,17 +146,17 @@ cluster_demo_worker_only_communicate.js
     var http = require('http');
     
     http.createServer(function(req, res){
-    	res.writeHead(200, {'Content-Type': 'text/plain'});
-    	res.end(`Hello world`);
-    	
-    	console.log(process.pid)
-    	process.send(`worker ${process.pid} get request!`);
-    	
-    	// for(var i=0;i<10000000000;i++) var j=i+1;
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.end(`Hello world`);
+        
+        console.log(process.pid)
+        process.send(`worker ${process.pid} get request!`);
+        
+        // for(var i=0;i<10000000000;i++) var j=i+1;
     }).listen(3002, '127.0.0.1');
     
     process.on('message', (msg)=>{
-    	console.log(`worker ${process.pid} get message: ${msg}`)
+        console.log(`worker ${process.pid} get message: ${msg}`)
     })
 
 
@@ -168,26 +168,26 @@ cluster_demo_worker_only_communicate.js
 
 cluster.js
 
-	var cluster = require('cluster');
-	
-	cluster.setupMaster({
-		exec: 'worker.js'
-	})
-	
-	cluster.fork();
-	cluster.fork();
-	cluster.fork();
-	cluster.fork();
+    var cluster = require('cluster');
+    
+    cluster.setupMaster({
+        exec: 'worker.js'
+    })
+    
+    cluster.fork();
+    cluster.fork();
+    cluster.fork();
+    cluster.fork();
 
 
 worker.js
 
-	var http = require('http');
-	
-	http.createServer(function(req, res){
-		res.writeHead(200, {'Content-Type': 'text/plain'});
-		res.end('Hello world\n');
-	}).listen(80, '127.0.0.1');
+    var http = require('http');
+    
+    http.createServer(function(req, res){
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.end('Hello world\n');
+    }).listen(80, '127.0.0.1');
 
 
 
