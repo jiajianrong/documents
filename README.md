@@ -20,7 +20,7 @@
 [nodejs的模块加载：一切你需要了解的都在这里](https://github.com/jiajianrong/documents/blob/master/node/nodejs的模块加载：一切你需要了解的都在这里.md)
 
 
-[深入Node debug - 步骤及原理](https://github.com/jiajianrong/documents/blob/master/node/%E6%B7%B1%E5%85%A5Node%20debug%20-%20%E6%AD%A5%E9%AA%A4%E5%8F%8A%E5%8E%9F%E7%90%86.md)
+[nodejs debug - 步骤及原理](https://github.com/jiajianrong/documents/blob/master/node/nodejs debug - 步骤及原理.md)
 
 
 [Middleware 原理 - koa](https://github.com/jiajianrong/documents/blob/master/node/hoc-koa2.js)
