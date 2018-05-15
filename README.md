@@ -80,9 +80,9 @@
 
 ## babel-webpack
 
-[Webpack-HMR](https://github.com/jiajianrong/documents/blob/master/babel-webpack/Webpack-HMR.md)
+[Webpack HMR 原理](https://github.com/jiajianrong/documents/blob/master/babel-webpack/Webpack-HMR.md)
 
-[Webpack-HMR-practise](https://github.com/jiajianrong/documents/blob/master/babel-webpack/Webpack-HMR-practise.md)
+[Webpack HMR 使用实践](https://github.com/jiajianrong/documents/blob/master/babel-webpack/Webpack-HMR-practise.md)
 
 [深入理解ES-module](https://github.com/jiajianrong/documents/blob/master/babel-webpack/ES-module.md)
 
