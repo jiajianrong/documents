@@ -12,9 +12,9 @@ var htmlStr =
   </head>
   <body>
     <form action="/uploadFile" method="post" enctype="multipart/form-data" >
-　　　　<input type="file" id="upload" name="upload" /> <br />
-　　　　<input type="submit" value="Upload" />
-　　</form>
+        <input type="file" id="upload" name="upload" /> <br />
+        <input type="submit" value="Upload" />
+    </form>
 </html>
 `
 
