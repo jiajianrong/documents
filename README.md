@@ -38,6 +38,9 @@
 [详解 request](https://github.com/jiajianrong/documents/blob/master/node/详解request.md)
 
 
+[file upload demo](https://github.com/jiajianrong/documents/blob/master/node/file-upload-demo.js)
+
+
 [nodejs负载均衡](https://github.com/jiajianrong/documents/blob/master/node/nodejs负载均衡.md)
 
 
