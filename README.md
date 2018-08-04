@@ -62,6 +62,9 @@
 [理解tomcat nio](https://github.com/jiajianrong/documents/blob/master/node/理解tomcat%20nio.md)
 
 
+[不要阻塞event-loop及worker-pool](https://github.com/jiajianrong/documents/blob/master/node/不要阻塞event-loop及worker-pool.md)
+
+
 
 ## react
 
