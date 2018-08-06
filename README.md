@@ -65,6 +65,9 @@
 [不要阻塞event-loop及worker-pool](https://github.com/jiajianrong/documents/blob/master/node/不要阻塞event-loop及worker-pool.md)
 
 
+[详解 Nginx keepalive](https://github.com/jiajianrong/documents/blob/master/node/Nginx-keepalive.md)
+
+
 
 ## react
 
