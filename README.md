@@ -68,7 +68,7 @@
 [详解 Nginx keepalive](https://github.com/jiajianrong/documents/blob/master/node/Nginx-keepalive.md)
 
 
-[nodejs错误控制](https://github.com/jiajianrong/documents/blob/master/node/nodesj错误控制.md)
+[nodejs错误控制](https://github.com/jiajianrong/documents/blob/master/node/nodejs错误控制.md)
 
 
 
