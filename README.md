@@ -23,6 +23,9 @@
 [nodejs debug - 步骤及原理](https://github.com/jiajianrong/documents/blob/master/node/nodejs%20debug%20-%20步骤及原理.md)
 
 
+[nodejs错误控制](https://github.com/jiajianrong/documents/blob/master/node/nodejs错误控制.md)
+
+
 [Middleware 原理 - koa](https://github.com/jiajianrong/documents/blob/master/node/hoc-koa2.js)
 
 
@@ -66,9 +69,6 @@
 
 
 [详解 Nginx keepalive](https://github.com/jiajianrong/documents/blob/master/node/Nginx-keepalive.md)
-
-
-[nodejs错误控制](https://github.com/jiajianrong/documents/blob/master/node/nodejs错误控制.md)
 
 
 

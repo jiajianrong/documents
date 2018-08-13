@@ -68,6 +68,41 @@ Koa应用其实是一个中间件函数的数组，以栈方式串行执行。�
     }
 
 
+## 继承自 `EventEmitter` 的类的错误处理
+
+未捕获的错误会导致进程退出
+
+	const EventEmitter = require('events');
+	const ee = new EventEmitter();
+	const http = require('http');
+	
+	http.createServer(function(req,res){res.end('ok')}).listen(8080)
+	
+    // 取消注释即可捕获错误，保护进程不退出
+	// ee.on('error', e => console.log('err', e.message))
+	
+	setImmediate(() => {
+	  // This will crash the process because no 'error' event
+	  // handler has been added.
+	  ee.emit('error', new Error('This will crash'));
+	});
+
+
+因此，通常会使用ee.emit扔出异常，然后由 `error` 监听器捕获
+
+	const EventEmitter = require('events');
+	const ee = new EventEmitter();
+	
+	ee.on('event', () => {
+	  ee.emit('error', new Error('money needed!'))
+	});
+	
+	ee.on('error', (e) => {
+	    console.log('err captured: ', e.message)
+	});
+	
+	ee.emit('event');
+
 
 
 *[参考](http://travisjeffery.com/b/2015/10/error-responses-on-node-js-with-koa/)*
