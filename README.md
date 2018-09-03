@@ -181,3 +181,5 @@
 	shell:
 		find /home/work/trace-analysis/new-trace-analysis/infoData/ -name "2017-12*" |awk '{print "rm -rf " $1}'|sh
 
+    curl:
+        curl "https://xxx/nodeapi/getUserInfo?" -H "content-type: application/x-www-form-urlencoded;charset=utf-8" -H "x-requested-with: Fetch" -H "Cookie: abc=xyz; nodejs_cas=abc;"

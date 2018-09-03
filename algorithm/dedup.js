@@ -1,8 +1,8 @@
-var a = { x: {x1: 1} }
+var a = { x: 1 }
 a.y = a
 //-----------
-var b = { y: 1 }
-var c = { c1: b, c2: {c3: b, c4: 2}, c5: 3 }
+var _b = { y: 1 }
+var c = { c1: _b, c2: _b }
 //-----------
 var m = { z1: 1 }
 var n = { z2: m }
@@ -14,6 +14,7 @@ var parents = []
 function loop( obj ) {
     
     if (parents.indexOf(obj)>-1) {
+        console.log('circular')
         return;
     }
     
@@ -31,5 +32,5 @@ function loop( obj ) {
 }
 
 
-loop(m)
+loop(c)
 console.log('parents:',parents)
