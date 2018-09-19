@@ -36,7 +36,7 @@ Node使用Worker Pool执行耗时任务，包括文件I/O(如果操作系统没�
 
 - I/O密集型
     - [DNS](https://nodejs.org/api/dns.html)：`dns.lookup()`, `dns.lookupService()`
-    - [File System](https://nodejs.org/api/fs.html#fs_threadpool_usage)：除`fs.FSWatcher()`和明确使用libuv线程池之外的所有文件API
+    - [File System](https://nodejs.org/api/fs.html#fs_threadpool_usage)：除了`fs.FSWatcher()`和明确同步使用libuv线程池，其他所有的IO API
 
 - CPU密集型
     - [Crypto](https://nodejs.org/api/crypto.html)：`crypto.pbkdf2()`, `crypto.randomBytes()`, `crypto.randomFill()`
