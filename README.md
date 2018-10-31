@@ -161,25 +161,27 @@
 
 ## 其他
 
-	mysql:
-		show variables like 'character%';
+    mysql:
+        show variables like 'character%';
         
     Chrome mock Android:
         "D:\Program Files\Google\Chrome\Application\chrome.exe" --user-agent="Android"
-	
-	npm:
-		npm config set prefix "D:\node8\env\node-global"
-		npm config set cache  "D:\node8\env\node-cache"
-		npm config set tmp    "D:\node8\env\node-tmp"
-		
-		npm config ls
-		npm config ls -l
-	
-	RegExp:
-		"金融街第三方所发生的".replace(/(?<=.{1}).(?=.{1})/g, '*')
+    
+    npm:
+        npm config set prefix "D:\node8\env\node-global"
+        npm config set cache  "D:\node8\env\node-cache"
+        npm config set tmp    "D:\node8\env\node-tmp"
+        
+        npm config ls
+        npm config ls -l
+        
+        npm i -g cnpm --registry=https://registry.npm.taobao.org
+    
+    RegExp:
+        "金融街第三方所发生的".replace(/(?<=.{1}).(?=.{1})/g, '*')
 
-	shell:
-		find /home/work/trace-analysis/new-trace-analysis/infoData/ -name "2017-12*" |awk '{print "rm -rf " $1}'|sh
+    shell:
+        find /home/work/trace-analysis/new-trace-analysis/infoData/ -name "2017-12*" |awk '{print "rm -rf " $1}'|sh
 
     curl:
         curl "https://xxx/nodeapi/getUserInfo?" -H "content-type: application/x-www-form-urlencoded;charset=utf-8" -H "x-requested-with: Fetch" -H "Cookie: abc=xyz; nodejs_cas=abc;"
