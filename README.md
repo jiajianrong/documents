@@ -185,3 +185,20 @@
 
     curl:
         curl "https://xxx/nodeapi/getUserInfo?" -H "content-type: application/x-www-form-urlencoded;charset=utf-8" -H "x-requested-with: Fetch" -H "Cookie: abc=xyz; nodejs_cas=abc;"
+        
+    copy a file from server1 to server2:
+
+        login server2
+        cd /home/work/.ssh
+        ssh-keygen -t rsa
+        copy id_rsa.pub content
+
+        login server1
+        cd /home/work/.ssh
+        touch authorized_keys
+        append server2@id_rsa.pub content into authorized_keys
+        chmod 600 ~/.ssh/authorized_keys
+
+        login server2
+        (10.48.160.26=server1)
+        scp work@10.48.160.26:/opt/web.tar.gz /opt/web.tar.gz
