@@ -202,3 +202,10 @@
         login server2
         (10.48.160.26=server1)
         scp work@10.48.160.26:/opt/web.tar.gz /opt/web.tar.gz
+
+    tar
+        tar -czvf a.tar.gz *.html    // 压缩当前目录所有html文件
+        tar -czvf a.tar.gz static    // 压缩static目录
+        
+        tar -xzvf a.tar.gz
+        
