@@ -185,7 +185,11 @@
 
     curl:
         curl "https://xxx/nodeapi/getUserInfo?" -H "content-type: application/x-www-form-urlencoded;charset=utf-8" -H "x-requested-with: Fetch" -H "Cookie: abc=xyz; nodejs_cas=abc;"
-        
+        curl http://localhost:8018/nodeapi/getUserInfo?_=1552888989172 --cookie "shiroCookie=a5d36948-2fd9-441b-8d55-ce1721aea048; _ga=GA1.1.800869426.1545637552; nodejs_finsys_cas=f6476bcfddfb72242652f87f7a1e249d; nodejs_finsys_cas.sig=jKWBXYCynFt1hrEh_w4HTaLYys8"
+
+    ab:
+        ab -c 5 -n 10 -H "Cookie: shiroCookie=a5d36948-2fd9-441b-8d55-ce1721aea048; _ga=GA1.1.800869426.1545637552; nodejs_finsys_cas=f6476bcfddfb72242652f87f7a1e249d; nodejs_finsys_cas.sig=jKWBXYCynFt1hrEh_w4HTaLYys8" http://localhost:8018/finance/funder/findFunderData?version=1
+
     copy a file from server1 to server2:
 
         login server2
