@@ -185,10 +185,16 @@
 
     curl:
         curl "https://xxx/nodeapi/getUserInfo?" -H "content-type: application/x-www-form-urlencoded;charset=utf-8" -H "x-requested-with: Fetch" -H "Cookie: abc=xyz; nodejs_cas=abc;"
-        curl http://localhost:8018/nodeapi/getUserInfo?_=1552888989172 --cookie "shiroCookie=a5d36948-2fd9-441b-8d55-ce1721aea048; _ga=GA1.1.800869426.1545637552; nodejs_finsys_cas=f6476bcfddfb72242652f87f7a1e249d; nodejs_finsys_cas.sig=jKWBXYCynFt1hrEh_w4HTaLYys8"
+        curl http://localhost:8018/nodeapi/getUserInfo --cookie "shiroCookie=a5d36948-2fd9-441b-8d55-ce1721aea048; _ga=GA1.1.800869426.1545637552; nodejs_finsys_cas=f6476bcfddfb72242652f87f7a1e249d; nodejs_finsys_cas.sig=jKWBXYCynFt1hrEh_w4HTaLYys8"
+        curl http://localhost:8018/order/list          --cookie "shiroCookie=a5d36948-2fd9-441b-8d55-ce1721aea048; _ga=GA1.1.800869426.1545637552; nodejs_finsys_cas=f6476bcfddfb72242652f87f7a1e249d; nodejs_finsys_cas.sig=jKWBXYCynFt1hrEh_w4HTaLYys8" -X POST -d "pageSize=10&currentPage=1&source=-1&buyCity=-1&fundCode=-1&userName=&mobile=&idCardNo=&saleDeparts=-1&saleName=&orderId=&orderType=-1&spCompanyId=-1&beginTime=2018-12-18&endTime=2019-03-18&workflowNodes=-1&nodeStatus=-1&carDetectStatus=-1&increseAmountStatus=-1&advanceLoan=-1&closeStatus=-1&saleDepart=-1"
 
     ab:
         ab -c 5 -n 10 -H "Cookie: shiroCookie=a5d36948-2fd9-441b-8d55-ce1721aea048; _ga=GA1.1.800869426.1545637552; nodejs_finsys_cas=f6476bcfddfb72242652f87f7a1e249d; nodejs_finsys_cas.sig=jKWBXYCynFt1hrEh_w4HTaLYys8" http://localhost:8018/finance/funder/findFunderData?version=1
+        ab -c 5 -n 10 -p "D:/ab-post-param.txt" -T "application/x-www-form-urlencoded" -H "Cookie: shiroCookie=a5d36948-2fd9-441b-8d55-ce1721aea048; _ga=GA1.1.800869426.1545637552; nodejs_finsys_cas=f6476bcfddfb72242652f87f7a1e249d; nodejs_finsys_cas.sig=jKWBXYCynFt1hrEh_w4HTaLYys8"  http://localhost:8018/order/list
+
+    ab-post-param.txt
+        pageSize=10&currentPage=1&source=-1&buyCity=-1&fundCode=-1&userName=&mobile=&idCardNo=&saleDeparts=-1&saleName=&orderId=&orderType=-1&spCompanyId=-1&beginTime=2018-12-18&endTime=2019-03-18&workflowNodes=-1&nodeStatus=-1&carDetectStatus=-1&increseAmountStatus=-1&advanceLoan=-1&closeStatus=-1&saleDepart=-1
+
 
     copy a file from server1 to server2:
 
