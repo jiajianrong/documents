@@ -9,9 +9,8 @@ Content-Type: application/json;charset=UTF-8
 
 
 var badContent = 
-'HTTP/1.1 400 Bad Request\r\n' +
-'Content-Length: 0\r\n' +
-'\r\n';
+'HTTP/1.1 400 Bad Request\n' +
+'Content-Length: 8\n\nssss';
 
 
 net.createServer((socket) => {
