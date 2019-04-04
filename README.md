@@ -221,4 +221,18 @@
         tar -czvf a.tar.gz static    // 压缩static目录
         
         tar -xzvf a.tar.gz
-        
+
+    hive建表
+        use hdp_ershouche_defaultdb;
+        CREATE EXTERNAL TABLE IF NOT EXISTS finance_static_site(json string)
+        PARTITIONED BY (day_id string)
+        ROW FORMAT DELIMITED FIELDS TERMINATED BY '\001'
+        STORED AS TEXTFILE
+
+    hive入表
+        use hdp_ershouche_defaultdb;
+        alter table hdp_ershouche_defaultdb.finance_static_site add partition(day_id='20190401') location '/home/hdp_ershouche/rawdata/finance_static_site/20190401/';
+
+    hive查询
+        use hdp_ershouche_defaultdb;
+        SELECT * FROM hdp_ershouche_defaultdb.finance_static_site where day_id='20190401'
