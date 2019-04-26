@@ -14,7 +14,7 @@ var badContent =
 
 
 net.createServer((socket) => {
-    socket.end(badContent);
+    socket.end(content);
 }).on('error', (err) => {
     console.log('err occurs', err);
     throw err;
