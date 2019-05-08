@@ -81,6 +81,8 @@
 
 [TCP TIME_WAIT](https://github.com/jiajianrong/documents/blob/master/node/TIME_WAIT.md)
 
+[SSO koa流程](https://github.com/jiajianrong/documents/blob/master/node/SSO单点登录.md)
+
 
 
 ## react

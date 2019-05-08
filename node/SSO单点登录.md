@@ -17,7 +17,7 @@
 
 
 - step1： 建立session (koa-generic-session)
-
+```
     app.use(session({
         // cookie key
         key: 'cookie_key',
@@ -35,7 +35,7 @@
             signed: true
         },
     }));
-
+```
  
 
 - step2：验证登录态 (wm-sso.authSession)
@@ -44,31 +44,31 @@
 
 
 - 首先判断session.user是否存在，存在则说明用户已登录，直接退出中间件
-
+```
     let sessionUser = ctx.session.user;
     if (sessionUser) {
         await next();
         return ;
     }
-
+```
 
 - 接下来去cas服务器校验
-
+```
     // 重定向到CAS服务器登录（其实不是一定会重定向cas页面）
     let authResult = await cas.authenticate(ctx);
-
+```
 
 - 成功后从authResult获取用户信息，存入redis；并302到无url.query.ticket的页面(service参数)
-
+```
     ctx.session.user = user;
     return ctx.redirect(service);
-
+```
  
 - 在cas.authenticate()里判断是否有query.ticket，有的话cas.validate；没有的话将页面请求302到passport登录页
 
 
 - cas.validate会发请求到cas服务器判断
-
+```
     // 有 ticket!
     if (ticket) {
         // 现在用CAS服务器验证它
@@ -77,11 +77,11 @@
     } else {
         ctx.redirect(redirectURL)
     }
-
+```
 
 - passport页面会判断自己域名下的cookie是否有效，有效的话302到来源页(service参数)；无效的话200出oa登录页html
 
 
 
 
-*58金融原创，转载请注明
+*58金融原创，转载请注明*
