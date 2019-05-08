@@ -11,8 +11,6 @@
 
 
 
-如图
-
 ![](https://github.com/jiajianrong/MarkdownPhotos/blob/master/sso/sso.jpg?raw=true)
 
 
