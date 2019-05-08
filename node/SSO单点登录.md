@@ -2,12 +2,12 @@
 
 #### 简单描述流程如下
 
-- 用户请求url(https://domain.com/path/?query)，koa中间件做下列处理
+- 用户请求urlhttps://domain.com/path/?query，koa中间件做下列处理
 - 判断redis中是否存在：session.user。存在则退出该中间件：next()；不存在则继续
 - 判断url.query.ticket是否存在。不存在则302到OA登录页，结束koa；存在则继续
 - 向CAS server发请求判断ticket是否有效。有效则解析response生成user信息并写入redis：session.user，并302到原始url，结束koa；无效返回Err Json给用户，结束koa
 
-其中OA登录页成功则将ticket拼入用户原始url：(https://domain.com/path/?query&ticket=aaa)，并302到此url；失败则继续停留在登录页
+其中OA登录页成功则将ticket拼入用户原始url：https://domain.com/path/?query&ticket=aaa，并302到此url；失败则继续停留在登录页
 
 
 
