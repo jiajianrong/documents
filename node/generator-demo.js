@@ -1,5 +1,5 @@
 function getUser(id) {
-    console.log('userid', id)
+    console.log('getUser, id', id)
     return new Promise(function(res, rej){
         setTimeout(function(){
             res({id: 1, name: 'jiajianrong'})
@@ -9,7 +9,7 @@ function getUser(id) {
 
 
 function getScores(id) {
-    console.log('userid', id)
+    console.log('getScores, id', id)
     return new Promise(function(res, rej){
         setTimeout(function(){
             res({classA: 100, classB: 99, classC: 98})
@@ -23,22 +23,23 @@ function getScores(id) {
 // frame
 //-----------
 var r
-var v
 var isAsync = false
+var asyncResult
 
-function co(asyncResult) {
+function co() {
     
     do {
         r = g.next(asyncResult)
-        v = r.value
-        console.log('co, v', v)
+        asyncResult = undefined
+        console.log('co, r', r)
     
         // promise
-        if ( v && v.then ) {
+        if ( r.value && r.value.then ) {
             isAsync = true
-            v.then(function(data){
+            r.value.then(function(data){
                 isAsync = false
-                co(data)
+                asyncResult = data
+                co()
             })
         }
     }
@@ -75,18 +76,19 @@ var g = main()
 co()
 
 /*
-C:\Users\jiajianrong\Desktop>node generator.js
-co, v 1
-userid 1
-co, v Promise { <pending> }
+D:\jiajianrong-d\document\documents\node>node generator-demo.js
+co, r { value: 1, done: false }
+getUser, id 1
+co, r { value: Promise { <pending> }, done: false }
 main, user { id: 1, name: 'jiajianrong' }
-co, v 2
-co, v 3
-co, v 4
-userid 2
-co, v Promise { <pending> }
+co, r { value: 2, done: false }
+co, r { value: 3, done: false }
+co, r { value: 4, done: false }
+getScores, id 2
+co, r { value: Promise { <pending> }, done: false }
 main, scores { classA: 100, classB: 99, classC: 98 }
-co, v 5
-co, v { classA: 100, classB: 99, classC: 98 }
+co, r { value: 5, done: false }
+co, r { value: { classA: 100, classB: 99, classC: 98 }, done: true }
+
 */
 
