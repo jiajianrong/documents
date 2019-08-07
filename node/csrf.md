@@ -71,7 +71,8 @@ token也不能被轻易猜到
 
 
 [译自](https://github.com/pillarjs/understanding-csrf)
-* 58金融前端 *
+
+*58金融前端*
 
 
 
