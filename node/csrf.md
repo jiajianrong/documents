@@ -16,16 +16,29 @@
 ## 对策
 
 
-#### POST请求使用json。因为攻击者的<form>无法发送json，所以你的服务端只接受json提交就行
+#### POST请求使用json
 
-#### 禁用CORS。如果不得不启用CORS的话，仅仅启用`OPTIONS, HEAD, GET`这类不会造成数据更改的请求。
+因为攻击者的<form>无法发送json，所以你的服务端只接受json提交就行
+
+
+#### 禁用CORS
+
+如果不得不启用CORS的话，仅仅启用`OPTIONS, HEAD, GET`这类不会造成数据更改的请求。
 但禁用CORS并不能阻止表单提交(不使用JS或AJAX，所以禁用CORS无效)
 
-#### 检测referrer。尽管referrer不那么有效，但是如果请求的referrer明确不为你的域名，返回403就行
+
+#### 检测referrer
+
+尽管referrer不那么有效，但是如果请求的referrer明确不为你的域名，返回403就行
+
 
 #### 确保GET请求不更改数据(库)
 
-#### 不要用POST方法。因为<form>表单只能用POST或GET，如果你选择了PUT/PATCH/DELETE的话，可被伪造的方法就减少了
+
+#### 不要用POST方法
+
+因为<form>表单只能用POST或GET，如果你选择了PUT/PATCH/DELETE的话，可被伪造的方法就减少了
+
 
 #### 最终办法是使用CSRF token，有如下几步：
 
@@ -49,6 +62,7 @@ token也不能被轻易猜到
 ###### 在JSON AJAX请求中添加token
 
 如上所述，如果服务端禁用CORS并且所有接口都只接受是JSON的话，那么一定没必要为请求添加token
+
 
 ###### 将获取token暴露在请求接口中
 
