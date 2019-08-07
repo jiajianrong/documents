@@ -18,7 +18,7 @@
 
 #### POST请求使用json
 
-因为攻击者的<form>无法发送json，所以你的服务端只接受json提交就行
+因为攻击者的`<form>`无法发送json，所以你的服务端只接受json提交就行
 
 
 #### 禁用CORS
@@ -37,7 +37,7 @@
 
 #### 不要用POST方法
 
-因为<form>表单只能用POST或GET，如果你选择了PUT/PATCH/DELETE的话，可被伪造的方法就减少了
+因为`<form>`表单只能用POST或GET，如果你选择了PUT/PATCH/DELETE的话，可被伪造的方法就减少了
 
 
 #### 最终办法是使用CSRF token，有如下几步：
