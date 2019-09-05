@@ -89,7 +89,7 @@
 [CSRF](https://github.com/jiajianrong/documents/blob/master/node/csrf.md)
 
 
-[函数式编程demo](https://github.com/jiajianrong/documents/blob/master/function-program.js)
+[函数式编程demo](https://github.com/jiajianrong/documents/blob/master/algorithm/function-program.js)
 
 
 
