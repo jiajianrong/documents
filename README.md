@@ -89,9 +89,6 @@
 [CSRF](https://github.com/jiajianrong/documents/blob/master/node/csrf.md)
 
 
-[函数式编程demo](https://github.com/jiajianrong/documents/blob/master/algorithm/function-program.js)
-
-
 
 
 ## react
@@ -171,6 +168,9 @@
 
 
 [硬币组合 2](https://github.com/jiajianrong/documents/blob/master/algorithm/coin_combination_2.js)
+
+
+[函数式编程demo](https://github.com/jiajianrong/documents/blob/master/algorithm/function-program.js)
 
 
 
