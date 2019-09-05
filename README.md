@@ -173,6 +173,8 @@
 [函数式编程demo](https://github.com/jiajianrong/documents/blob/master/algorithm/function-program.js)
 
 
+[有限状态机demo](https://github.com/jiajianrong/documents/blob/master/algorithm/statemachine.js)
+
 
 
 ## 其他
