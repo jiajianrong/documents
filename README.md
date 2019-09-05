@@ -89,6 +89,9 @@
 [CSRF](https://github.com/jiajianrong/documents/blob/master/node/csrf.md)
 
 
+[函数式编程demo](https://github.com/jiajianrong/documents/blob/master/node/function-program.js)
+
+
 
 
 ## react
