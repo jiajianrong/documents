@@ -89,6 +89,9 @@
 [CSRF](https://github.com/jiajianrong/documents/blob/master/node/csrf.md)
 
 
+[手动升级nodejs](https://github.com/jiajianrong/documents/blob/master/node/手动升级nodejs.md)
+
+
 
 
 ## react
