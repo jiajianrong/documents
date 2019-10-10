@@ -255,3 +255,9 @@
     hive查询
         use hdp_ershouche_defaultdb;
         SELECT * FROM hdp_ershouche_defaultdb.finance_static_site where day_id='20190401'
+
+    跨域
+        ctx.set('Access-Control-Allow-Origin', ctx.headers.origin);
+        ctx.set('Access-Control-Allow-Headers', 'cache-control,content-type,referer-url');
+        ctx.set('Access-Control-Allow-Methods', 'OPTIONS,GET,HEAD,PUT,POST,DELETE,PATCH');
+        ctx.set('Access-Control-Allow-Credentials', true);
