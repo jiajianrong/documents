@@ -92,6 +92,7 @@
 [手动升级nodejs](https://github.com/jiajianrong/documents/blob/master/node/手动升级nodejs.md)
 
 
+[miniprogram及webview同步SSO登录信息](https://github.com/jiajianrong/documents/blob/master/node/miniprogram及webview同步SSO登录信息.md)
 
 
 ## react
