@@ -240,7 +240,7 @@
     ssh-keygen command:
 
         ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-		[图解SSH](https://www.jianshu.com/p/33461b619d53)
+        [图解SSH](https://www.jianshu.com/p/33461b619d53)
     
     
     tar
