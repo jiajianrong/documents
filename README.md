@@ -219,7 +219,7 @@
         pageSize=10&currentPage=1&source=-1&buyCity=-1&fundCode=-1&userName=&mobile=&idCardNo=&saleDeparts=-1&saleName=&orderId=&orderType=-1&spCompanyId=-1&beginTime=2018-12-18&endTime=2019-03-18&workflowNodes=-1&nodeStatus=-1&carDetectStatus=-1&increseAmountStatus=-1&advanceLoan=-1&closeStatus=-1&saleDepart=-1
 
 
-    copy a file from server1 to server2:
+    on server2, copy a file from server1 to server2:
 
         login server2
         cd /home/work/.ssh
@@ -235,7 +235,14 @@
         login server2
         (10.48.160.26=server1)
         scp work@10.48.160.26:/opt/web.tar.gz /opt/web.tar.gz
+    
+    
+    ssh-keygen command:
 
+        ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+		[图解SSH](https://www.jianshu.com/p/33461b619d53)
+    
+    
     tar
         tar -czvf a.tar.gz *.html    // 压缩当前目录所有html文件
         tar -czvf a.tar.gz static    // 压缩static目录
