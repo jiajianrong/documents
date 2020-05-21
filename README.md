@@ -242,7 +242,6 @@
         ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
         [图解SSH](https://www.jianshu.com/p/33461b619d53)
     
-    
     tar
         tar -czvf a.tar.gz *.html    // 压缩当前目录所有html文件
         tar -czvf a.tar.gz static    // 压缩static目录
