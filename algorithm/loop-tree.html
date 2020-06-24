@@ -1,0 +1,128 @@
+<html>
+<body>
+<div id="root" data-v="root">
+	<div data-v="1">
+		<div data-v="11">
+			<div data-v="111"></div>
+			<div data-v="112"></div>
+			<div data-v="113"></div>
+		</div>
+		<div data-v="12"></div>
+	</div>
+	<div data-v="2">
+		<div data-v="21">
+			<div data-v="211"></div>
+			<div data-v="212"></div>
+			<div data-v="213"></div>
+		</div>
+		<div data-v="22">
+			<div data-v="221"></div>
+			<div data-v="222">
+				<div data-v="2221"></div>
+				<div data-v="2222"></div>
+			</div>
+			<div data-v="223"></div>
+		</div>
+	</div>
+</div>
+
+<script>
+/*后序非递归
+root = document.getElementById('root')
+queue = []
+queue.push(root)
+result = []
+while(queue.length) {
+	let node = queue.pop()
+	result.unshift(node)
+	for (let i=0; i<node.children.length; i++) {
+		node.children[i] && queue.push(node.children[i])
+	}
+}
+
+result.forEach(node=>console.log(node.getAttribute('data-v')))
+*/
+</script>
+<script>
+//中序非递归
+/*
+root = document.getElementById('root')
+queue = []
+node = root
+//way1
+while(queue.length || node) {
+	if (node) {
+		queue.push(node)
+		node = node.children[0]
+		continue;
+	}	
+	let currentNode = queue.pop()
+	console.log(currentNode.getAttribute('data-v'))
+	node = currentNode.children[1]
+}
+//way2
+while(queue.length || node) {
+	while(node) {
+		queue.push(node)
+		node = node.children[0]
+	}
+	let currentNode = queue.pop()
+	console.log(currentNode.getAttribute('data-v'))
+	node = currentNode.children[1]
+}
+*/
+</script>
+<script>
+/*
+root = document.getElementById('root')
+queue = []
+queue.push(root)
+//先序非递归
+while(queue.length) {
+	let node = queue.pop()
+	console.log(node.getAttribute('data-v'))
+	for (let i=node.children.length-1; i>=0; i--) {
+		node.children[i] && queue.push(node.children[i])
+	}
+}
+//先序递归
+function removeTopOneAndPushItsChildren() {
+	let node = queue.pop()
+	if (!node) return;
+	console.log(node.getAttribute('data-v'))
+	for (let i=node.children.length-1; i>=0; i--) {
+		queue.push(node.children[i])
+	}
+	removeTopOneAndPushItsChildren()
+}
+removeTopOneAndPushItsChildren();
+*/
+</script>
+<script>
+/*
+root = document.getElementById('root')
+queue = []
+queue.push(root)
+//层次非递归
+while(queue.length) {
+	let node = queue.shift()
+	console.log(node.getAttribute('data-v'))
+	for (let i=0; i<node.children.length; i++) {
+		queue.push(node.children[i])
+	}
+}
+//层次递归
+function removeTopOneAndPushItsChildren() {
+	let node = queue.shift()
+	if (!node) return;
+	console.log(node.getAttribute('data-v'))
+	for (let i=0; i<node.children.length; i++) {
+		node.children[i] && queue.push(node.children[i])
+	}
+	removeTopOneAndPushItsChildren()
+}
+removeTopOneAndPushItsChildren();
+*/
+</script>
+</body>
+</html>
