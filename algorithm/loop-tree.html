@@ -125,6 +125,7 @@ removeTopOneAndPushItsChildren();
 */
 </script>
 <script>
+/*
 root = document.getElementById('root')
 queue = []
 queue.push(root)
@@ -150,6 +151,75 @@ while(queue.length) {
 	}
 }
 console.log(widthArr)
+*/
 </script>
+
+<script>
+function leftpad(n) {
+	let arr = new Array(n)
+	arr.fill(' ')
+	return arr.join('')
+}
+
+function loop(node, h) {
+	if (!node) {
+		return;
+	}
+	
+	console.log( leftpad(h++) + node.getAttribute('data-v') )
+	
+	for (let i=0; i<node.children.length; i++) {
+		let child = node.children[i]
+		loop(child, h)
+	}
+}
+
+root = document.getElementById('root')
+
+//loop(root, 0)
+
+root.h = 0
+queue = []
+queue.push(root)
+
+//先序非递归
+while(queue.length) {
+	let node = queue.pop()
+	let h = node.h
+	
+	console.log( leftpad(h) + node.getAttribute('data-v') )
+	
+	for (let i=node.children.length-1; i>=0; i--) {
+		let child = node.children[i]
+		if (child) {
+			child.h = h+1
+			queue.push(child)
+		}
+	}
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
