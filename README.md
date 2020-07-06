@@ -180,6 +180,15 @@
 [有限状态机demo](https://github.com/jiajianrong/documents/blob/master/algorithm/statemachine.js)
 
 
+[字母组合](https://github.com/jiajianrong/documents/blob/master/algorithm/recursion.js)
+
+
+[tree遍历](https://github.com/jiajianrong/documents/blob/master/algorithm/loop-tree.html)
+
+
+[数组扁平](https://github.com/jiajianrong/documents/blob/master/algorithm/arr-flatten.js)
+
+
 
 ## 其他
 

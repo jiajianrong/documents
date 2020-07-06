@@ -124,5 +124,32 @@ function removeTopOneAndPushItsChildren() {
 removeTopOneAndPushItsChildren();
 */
 </script>
+<script>
+root = document.getElementById('root')
+queue = []
+queue.push(root)
+//每层宽度和最大深度
+widthArr = [1]
+widthCount = 0
+n_flag = null
+
+while(queue.length) {
+	let node = queue.shift()
+	if (node===n_flag) {
+		widthArr.push(widthCount)
+		n_flag = null
+		widthCount = 0
+	}
+	console.log(node.getAttribute('data-v'))
+	for (let i=0; i<node.children.length; i++) {
+		if (!n_flag) {
+			n_flag = node.children[0]
+		}
+		widthCount++
+		queue.push(node.children[i])
+	}
+}
+console.log(widthArr)
+</script>
 </body>
 </html>
