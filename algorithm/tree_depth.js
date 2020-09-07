@@ -11,7 +11,14 @@ var node6 = new Node(6)
 var node7 = new Node(7)
 var node8 = new Node(8)
 var node9 = new Node(9)
-
+var node10 = new Node(10)
+/*
+      1
+  2       3
+4   7   5   6
+       8 9
+	    10
+*/
 node1.left = node2
 node1.right = node3
 
@@ -24,6 +31,7 @@ node3.right = node6
 node5.left = node8
 node5.right = node9
 
+node9.left = node10
 
 
 
@@ -39,7 +47,7 @@ function maxDepth(node) {
 
 
 var count = maxDepth(node1)
-//console.log(count)
+console.log('max depth: ', count)
 
 
 

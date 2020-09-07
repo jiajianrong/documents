@@ -189,6 +189,11 @@
 [数组扁平](https://github.com/jiajianrong/documents/blob/master/algorithm/arr-flatten.js)
 
 
+[自循环](https://github.com/jiajianrong/documents/blob/master/algorithm/isInfinite.js)
+
+
+[最大路径和](https://github.com/jiajianrong/documents/blob/master/algorithm/maxSubRouth.js)
+
 
 ## 其他
 
@@ -277,3 +282,7 @@
         ctx.set('Access-Control-Allow-Headers', 'cache-control,content-type,referer-url');
         ctx.set('Access-Control-Allow-Methods', 'OPTIONS,GET,HEAD,PUT,POST,DELETE,PATCH');
         ctx.set('Access-Control-Allow-Credentials', true);
+    
+    端口|进程
+        lsof -i tcp:PORT
+        ps -ef |grep PID
