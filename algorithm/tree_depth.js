@@ -69,8 +69,8 @@ function minDepth(node) {
 }
 
 
-var count = minDepth(node1)
-//console.log(count)
+
+console.log('minDepth: ', minDepth(node1))
 
 
 

@@ -71,13 +71,17 @@ function calPaths(node) {
 }
 
 // 穷举所有路径
-calPaths(root);
-
-
+//calPaths(root);
 
 
 
 function solve(node) {
+
+    if (!node) {
+        return 0;
+    }
+
+    return node.value + Math.max(solve(node.left), solve(node.right));
 
     if (node.left && !node.right) {
         return node.value + solve(node.left);
@@ -97,7 +101,7 @@ function solve(node) {
     }
 }
 
-// 计算最大和路径
+// 计算最大和
 console.log(solve(root));
 
 

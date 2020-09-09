@@ -1,4 +1,4 @@
-var s = 'abcde'
+var s = 'abcd'
 recurse(s.split(''))
 
 

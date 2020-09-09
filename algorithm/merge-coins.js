@@ -1,4 +1,4 @@
-var coins = [2, 3, 5]
+var coins = [1, 2, 3, 5]
 var results = split_arr(coins)
 console.log(results)
 
