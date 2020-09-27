@@ -37,17 +37,13 @@ setTimeout(ff, 5000, '66666')
 
 
 function throttle(f, interval) {
-	
 	var timer
 	
 	return function() {
-		
 		let context = this
 		let args = arguments
 		
-		if (timer) {
-			return;
-		}
+		if (timer) return;
 		
 		timer = setTimeout( ()=>{
 			clearTimeout(timer)

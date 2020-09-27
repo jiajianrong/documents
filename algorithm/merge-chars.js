@@ -1,5 +1,4 @@
-var s = 'abcd'
-recurse(s.split(''))
+recurse('abcd'.split(''))
 
 
 function recurse(arr) {
@@ -8,7 +7,6 @@ function recurse(arr) {
 	}
 	
 	let c = arr[0]
-	
 	let arr_remain = arr.slice(1)
 	
 	let arr_result = recurse(arr_remain)
@@ -40,14 +38,4 @@ function interact_detail(c, str) {
 	
 	return arr_t
 }
-
-
-
-
-
-
-
-
-
-
 
