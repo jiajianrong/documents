@@ -124,6 +124,10 @@
 [flex布局](https://github.com/jiajianrong/documents/blob/master/react/flex-layout.md)
 
 
+[H5监控-性能与错误](https://github.com/jiajianrong/documents/blob/master/react/web-monitor/web-monitor.html)
+
+
+
 
 ## babel-webpack
 
@@ -143,56 +147,63 @@
 
 [计算器](https://github.com/jiajianrong/documents/blob/master/algorithm/calculater.js)
 
-
 [str match 暴力](https://github.com/jiajianrong/documents/blob/master/algorithm/str_match_bm.js)
 
-
 [str match kpm](https://github.com/jiajianrong/documents/blob/master/algorithm/str_match_kmp.js)
-
 
 [str match kpm next](https://github.com/jiajianrong/documents/blob/master/algorithm/str_match_kmp_next.js)
 
 
-[tree print](https://github.com/jiajianrong/documents/blob/master/algorithm/tree_print.js)
-
-
-[tree depth](https://github.com/jiajianrong/documents/blob/master/algorithm/tree_depth.js)
-
-
-[tree 序列化](https://github.com/jiajianrong/documents/blob/master/algorithm/tree_serialize.js)
-
 
 [最小编辑距离](https://github.com/jiajianrong/documents/blob/master/algorithm/edition_distince.js)
 
-
 [硬币组合 1](https://github.com/jiajianrong/documents/blob/master/algorithm/coin_combination.js)
-
 
 [硬币组合 1 动态规划](https://github.com/jiajianrong/documents/blob/master/algorithm/coin_combination_dp.js)
 
-
 [硬币组合 2](https://github.com/jiajianrong/documents/blob/master/algorithm/coin_combination_2.js)
 
-
 [函数式编程demo](https://github.com/jiajianrong/documents/blob/master/algorithm/function-program.js)
-
 
 [有限状态机demo](https://github.com/jiajianrong/documents/blob/master/algorithm/statemachine.js)
 
 
-[字母组合](https://github.com/jiajianrong/documents/blob/master/algorithm/recursion.js)
+
+[归并排序](https://github.com/jiajianrong/documents/blob/master/algorithm/merge-sort.js)
+
+[归并硬币组合](https://github.com/jiajianrong/documents/blob/master/algorithm/merge-coins.js)
+
+[归并字母组合](https://github.com/jiajianrong/documents/blob/master/algorithm/merge-chars.js)
+
 
 
 [tree遍历](https://github.com/jiajianrong/documents/blob/master/algorithm/loop-tree.html)
 
+[tree 所有路径](https://github.com/jiajianrong/documents/blob/master/algorithm/tree-get-all-paths.js)
+
+[tree 最大路径/和](https://github.com/jiajianrong/documents/blob/master/algorithm/tree-get-max-sum-and-depth.js)
+
+[tree 包含](https://github.com/jiajianrong/documents/blob/master/algorithm/tree-is-contain.js)
+
+[tree 对称](https://github.com/jiajianrong/documents/blob/master/algorithm/tree-is-mirror.js)
+
+[tree 序列化](https://github.com/jiajianrong/documents/blob/master/algorithm/tree-serialize.js)
+
+
 
 [数组扁平](https://github.com/jiajianrong/documents/blob/master/algorithm/arr-flatten.js)
+
+[数组旋转](https://github.com/jiajianrong/documents/blob/master/algorithm/arr-rotate.js)
+
+
+
+[最长子数组-存在负数](https://github.com/jiajianrong/documents/blob/master/algorithm/arr-max-subarr-sum.js)
+
+[最长子数组-最大和存在限制](https://github.com/jiajianrong/documents/blob/master/algorithm/arr-max-subarr-sum-with-limit.js)
 
 
 [自循环](https://github.com/jiajianrong/documents/blob/master/algorithm/isInfinite.js)
 
-
-[最大路径和](https://github.com/jiajianrong/documents/blob/master/algorithm/maxSubRouth.js)
 
 
 ## 其他
