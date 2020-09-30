@@ -124,7 +124,7 @@
 [flex布局](https://github.com/jiajianrong/documents/blob/master/react/flex-layout.md)
 
 
-[H5监控-性能与错误](https://github.com/jiajianrong/documents/blob/master/react/web-monitor/web-monitor.html)
+[H5监控-性能与错误](https://htmlpreview.github.io/?https://github.com/jiajianrong/documents/blob/master/react/web-monitor/web-monitor.html)
 
 
 
@@ -199,7 +199,7 @@
 
 [最长子数组-存在负数](https://github.com/jiajianrong/documents/blob/master/algorithm/arr-max-subarr-sum.js)
 
-[最长子数组-最大和存在限制](https://github.com/jiajianrong/documents/blob/master/algorithm/arr-max-subarr-sum-with-limit.js)
+[最长子数组-最大和存在限制](https://github.com/jiajianrong/documents/blob/master/algorithm/arr-max-subarr-sum-within-limit.js)
 
 
 [自循环](https://github.com/jiajianrong/documents/blob/master/algorithm/isInfinite.js)
