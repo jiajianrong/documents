@@ -8,19 +8,19 @@ let { root } = require('./tree-demo-standard');
 */
 let stack = [];
 
+
 function isLeaf(node) {
 	return !node.left && !node.right;
 }
 
-function calPaths(node) {
-	stack.push(node);
 
-	if (node.left) {
-		calPaths(node.left);
-	}
-	if (node.right) {
-		calPaths(node.right);
-	}
+function calPaths(node) {
+    if (!node) return;
+	
+	stack.push(node);
+    
+	calPaths(node.left);
+	calPaths(node.right);
 	
 	if (isLeaf(node)) {
 		stack.forEach(item => console.log(item.value));
@@ -29,6 +29,7 @@ function calPaths(node) {
 	
 	stack.pop();
 }
+
 
 // 穷举所有路径
 calPaths(root);

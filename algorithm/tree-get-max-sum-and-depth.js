@@ -17,8 +17,8 @@ function maxDepth(node) {
 	var l = maxDepth(node.left);
 	var r = maxDepth(node.right);
 	
-	return Math.max(l, r) + 1;
+	return 1 + Math.max(l, r);
 }
 
 console.log('max sum: ', maxSum(root));
-console.log('max depth: ', maxDepth(root))
+console.log('max depth: ', maxDepth(root));
