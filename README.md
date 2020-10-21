@@ -141,6 +141,10 @@
 
 [模板引擎](https://github.com/jiajianrong/documents/blob/master/babel-webpack/template_engine.js)
 
+[webpack编译服务端代码-原理](https://github.com/jiajianrong/documents/blob/master/babel-webpack/Backend_Apps_with_Webpack_1.md)
+
+[webpack编译服务端代码-实践](https://github.com/jiajianrong/documents/blob/master/babel-webpack/Backend_Apps_with_Webpack_2.md)
+
 
 
 ## algorithm
@@ -204,7 +208,7 @@
 
 
 
-## 其他
+## 其他：记录一些常用的命令
 
     mysql:
         show variables like 'character%';
@@ -295,3 +299,24 @@
     端口|进程
         lsof -i tcp:PORT
         ps -ef |grep PID
+
+    babel
+        babel-cli / babel-core：         命令行/API
+        babel-register / babel-node：    编译服务端代码
+        babel-polyfill:                  core-js/stable & regenerator-runtime；{useBuiltIns: entry|usage}
+        babel-runtime:                   runtime helper & regenerator-runtime；api转换使用局部变量，不修改原型
+        babel-plugin-transform-runtime： helpers定义改为引用；自动引用
+
+    React
+        - TypeScript类型支持
+        - 同时支持 Class 与 React.FC 组件
+        - 友好的异步操作
+        - 支持按需加载
+        - 少重复样板代码
+        - 符合函数式特性（immutable，computed，memoization...）
+        - 支持状态互相依赖
+        - 高内聚，低耦合
+        - 支持react-router状态管理
+        - API清晰简洁
+        - 丰富的生态体系
+

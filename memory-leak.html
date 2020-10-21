@@ -34,32 +34,35 @@ window.onload = function(){
 
 window.arr = []
 
+
+function clickHandler() {
+var str1 = Array(5000).fill('x')
+var str2 = Array(5000).fill('x')
+alert('click')
+}
+
 window.onload = function(){
 
     function add() {
         
         var el = document.createElement('div')
         el.innerHTML = "xxx"
-        el.addEventListener('click', function(){
-            var str1 = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-            var str2 = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-            alert('click')
-        })
+        el.addEventListener('click', clickHandler)
         document.body.appendChild(el)
         
         // 会泄露
-        arr.push(el)
+        arr.push(clickHandler)
     }
 
 
     setTimeout(function(){
-        for (var i=0;i<5000;i++) add()
-    }, 10000)
+        for (var i=0;i<500;i++) add()
+    }, 2000)
     
     setTimeout(function(){
         //for (var i=0;i<5000;i++) document.body.removeChild(document.body.children[0])
         document.body.innerHTML = ""
-    }, 20000)
+    }, 6000)
 
 }
 </script>
