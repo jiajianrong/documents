@@ -275,6 +275,23 @@
         
         tar -xzvf a.tar.gz
 
+    git
+        基于当前分支master 创建branchA
+            git branch branchA
+            git checkout branchA
+            coding
+            git push origin branchA:branchA
+            
+        将当前分支branchA 合并回master
+            当前branchA
+            git checkout master
+            git merge branchA
+            
+        将当前分支branchA 合并回master
+            页面操作
+            git checkout master
+            git pull
+    
     hive建表
         use hdp_ershouche_defaultdb;
         CREATE EXTERNAL TABLE IF NOT EXISTS finance_static_site(json string)
