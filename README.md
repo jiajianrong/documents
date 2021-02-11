@@ -3,6 +3,8 @@
 
 先看[技术大图](https://github.com/jiajianrong/documents/blob/master/技术分享-贾建容-水滴-20201224.pptx)
 
+https://github.com/jiajianrong/documents/blob/master/team-frame.png?raw=true
+
 
 ## node
 
