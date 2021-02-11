@@ -3,7 +3,7 @@
 
 先看[技术大图](https://github.com/jiajianrong/documents/blob/master/技术分享-贾建容-水滴-20201224.pptx)
 
-https://github.com/jiajianrong/documents/blob/master/team-frame.png?raw=true
+https://img.imgdb.cn/item/6024a52d3ffa7d37b317eaaa.png?raw=true
 
 
 ## node
