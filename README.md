@@ -1,6 +1,7 @@
 
-均为原创，转载请注明出自[58金融](https://github.com/jiajianrong)
+均为原创，转载请注明出自(https://github.com/jiajianrong)
 
+先看[技术大图](https://github.com/jiajianrong/documents/blob/master/技术分享-贾建容-水滴-20201224.pptx)
 
 
 ## node
