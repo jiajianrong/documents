@@ -94,6 +94,6 @@ public class JServer {
 
     public static void main (String args[]) {
         System.out.println("JServer started!");
-        new JServer(9494);
+        new JServer(80);
     }
 }
