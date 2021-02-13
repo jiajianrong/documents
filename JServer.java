@@ -53,25 +53,23 @@ public class JServer {
                 BufferedWriter bw = new BufferedWriter(osw); 
                 
                 String command[] = br.readLine().split("\\s+");
-                if (3 == command.length) {
-                    if ("GET".equals(command[0])) {
-                        System.out.printf("GET %s\n", command[1]);
-                        String path = command[1];
-                        
-                        String strResult = "succ";
-                        String type = "text/plain";
-                        bw.write("HTTP/1.0 200 Ok");
-                        bw.newLine();
-                        bw.write(String.format("Content-Type: %s", type));
-                        bw.newLine();
-                        bw.write(String.format("Content-Length: %d", strResult.length()));
-                        bw.newLine(); 
-                        bw.write(String.format("Access-Control-Allow-Origin: *"));
-                        bw.newLine();
-                        bw.newLine();
-                        bw.write(strResult);
-                        bw.flush();
-                    }
+                if (3 == command.length && "GET".equals(command[0])) {
+                    System.out.printf("GET %s\n", command[1]);
+                    String path = command[1];
+
+                    String strResult = "succ";
+                    String type = "text/plain";
+                    bw.write("HTTP/1.0 200 Ok");
+                    bw.newLine();
+                    bw.write(String.format("Content-Type: %s", type));
+                    bw.newLine();
+                    bw.write(String.format("Content-Length: %d", strResult.length()));
+                    bw.newLine(); 
+                    bw.write(String.format("Access-Control-Allow-Origin: *"));
+                    bw.newLine();
+                    bw.newLine();
+                    bw.write(strResult);
+                    bw.flush();
                 } else {
                     bw.write("HTTP/1.1 400 Bad Request");
                     bw.newLine();
