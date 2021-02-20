@@ -1,8 +1,6 @@
 
 均为原创，转载请注明出自(https://github.com/jiajianrong)
 
-[技术大图](https://github.com/jiajianrong/documents/blob/master/技术分享-贾建容-水滴-20201224.pptx)
-
 ![](https://img.imgdb.cn/item/6024a52d3ffa7d37b317eaaa.png?raw=true)
 
 
