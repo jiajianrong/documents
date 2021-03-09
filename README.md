@@ -316,7 +316,8 @@
     
     端口|进程
         lsof -i tcp:PORT
-        ps -ef |grep PID
+        ps -ef|grep PID
+        netstat -antup
 
     babel
         babel-cli / babel-core：         命令行/API
