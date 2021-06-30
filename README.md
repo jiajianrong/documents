@@ -318,6 +318,13 @@
         lsof -i tcp:PORT
         ps -ef|grep PID
         netstat -antup
+    
+    查看文件大小
+        du -ahd 1 . # -a all -h 显示大小时使用 K，M，G 等可读单位 -d 目录深度
+    查看文件是否被打开
+        lsof faas.log
+    查看文件被哪个进程打开
+        lsof | grep faas.log
 
     babel
         babel-cli / babel-core：         命令行/API
