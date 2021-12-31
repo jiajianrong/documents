@@ -207,6 +207,8 @@
 
 [自循环](https://github.com/jiajianrong/documents/blob/master/algorithm/isInfinite.js)
 
+[解释器](https://github.com/jiajianrong/documents/blob/master/algorithm/interpreter-design-pattern.js)
+
 
 
 ## 其他：记录一些常用的命令
