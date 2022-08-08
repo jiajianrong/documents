@@ -320,6 +320,18 @@
         lsof -i tcp:PORT
         ps -ef|grep PID
         netstat -antup
+        ps -eo pid,lstart,cmd|grep node
+    
+    网络
+        sudo iptables -nL
+        sudo iptables -I INPUT -p TCP --dport 8080 -j REJECT --reject-with tcp-reset
+        sudo iptables -I OUTPUT -p TCP --dport 8080 -j REJECT --reject-with tcp-reset
+        sudo iptables -I FORWARD -p TCP --dport 8080 -j REJECT --reject-with tcp-reset
+        sudo iptables --flush
+        sudo iptables -I INPUT -p TCP --dport 8080 -j DROP
+        sudo iptables -I OUTPUT -p TCP --dport 8080 -j DROP
+        sudo iptables -I FORWARD -p TCP --dport 8080 -j DROP
+        
     
     查看文件大小
         du -ahd 1 . # -a all -h 显示大小时使用 K，M，G 等可读单位 -d 目录深度
