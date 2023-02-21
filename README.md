@@ -340,6 +340,11 @@
     
     查看文件大小
         du -ahd 1 . # -a all -h 显示大小时使用 K，M，G 等可读单位 -d 目录深度
+        sudo du -sh /*
+        sudo du -sh ./*
+        sudo du -s /* |sort -nr
+        sudo du -s ./* |sort -nr
+        sudo du -sh /home/admin/* | fgrep G
     查看文件是否被打开
         lsof faas.log
     查看文件被哪个进程打开
