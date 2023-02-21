@@ -294,6 +294,11 @@
             页面操作
             git checkout master
             git pull
+            
+        回退已push的记录
+            git log
+            git reset --hard <commit-id>
+            git push origin HEAD --force
     
     hive建表
         use hdp_ershouche_defaultdb;
