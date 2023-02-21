@@ -340,6 +340,9 @@
     
     查看文件大小
         du -ahd 1 . # -a all -h 显示大小时使用 K，M，G 等可读单位 -d 目录深度
+        du -ahd 1 /
+        du -ad 1 . |sort -nr
+        du -ad 1 / |sort -nr
         sudo du -sh /*
         sudo du -sh ./*
         sudo du -s /* |sort -nr
