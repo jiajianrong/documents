@@ -373,3 +373,11 @@
         - API清晰简洁
         - 丰富的生态体系
 
+    wget安装nodejs
+        - dnf info nodejs
+        - https://developer.aliyun.com/article/980198
+        - wget -c https://npmmirror.com/mirrors/node/v16.15.0/node-v16.15.0-linux-x64.tar.xz
+        - tar Jxf node-v16.15.0-linux-x64.tar.xz -C /usr/local/
+        - echo "export PATH=/usr/local/node-v16.15.0-linux-x64/bin/:$PATH" >> .bashrc
+        - source .bashrc
+        - node -v
