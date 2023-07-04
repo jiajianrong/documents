@@ -1,0 +1,180 @@
+摘要总结，原内容来源于网络
+
+
+## 定时任务
+
+只能周期性执行，不能支持定时在某个时间点执行
+
+```
+public static void init() {
+    new Thread(() -> {
+        while (true) {
+            try {
+                System.out.println("下载文件");
+                Thread.sleep(1000 * 60 * 5);
+            } catch (Exception e) {
+                log.error(e);
+            }
+        }
+    }).start();
+}
+```
+
+
+## 监听器
+
+在配置中心有个开关，配置监听器是否开启，如果开启了使用单线程异步执行
+
+```
+@Service
+public CanalService {
+    private volatile boolean running = false;
+    private Thread thread;
+    @Autowired
+    private CanalConnector canalConnector;    
+    public void handle() {
+        //连接canal
+        while(running) {
+           //业务处理
+        }
+    }   
+    public void start() {
+       thread = new Thread(this::handle, "name");
+       running = true;
+       thread.start();
+    }    
+    public void stop() {
+       if(!running) {
+          return;
+       }
+       running = false;
+    }
+}
+
+通过apollo的ApolloConfigChangeListener注解，可以监听配置参数的变化。
+public class CanalConfig {
+    @Autowired
+    private CanalService canalService;
+    @ApolloConfigChangeListener
+    public void change(ConfigChangeEvent event) {
+        String value = event.getChange("test.canal.enable").getNewValue();
+        if(BooleanUtils.toBoolean(value)) {
+            canalService.start();
+        } else {
+            canalService.stop();
+        }
+    }
+}
+```
+
+
+
+## 阻塞队列
+
+```
+@Component
+public class LoginLogQueue {
+    private static final int QUEUE_MAX_SIZE    = 1000;
+    private BlockingQueueblockingQueue queue = new LinkedBlockingQueue<>(QUEUE_MAX_SIZE);
+    //生成消息
+    public boolean push(LoginLog loginLog) {
+        return this.queue.add(loginLog);
+    } 
+    //消费消息
+    public LoginLog poll() {
+        LoginLog loginLog = null;
+        try {
+            loginLog = this.queue.take();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+}
+
+@Service
+public class LoginSerivce {    
+    @Autowired
+    private LoginLogQueue loginLogQueue;
+    public int login(UserInfo userInfo) {
+        //业务处理
+        LoginLog loginLog = convert(userInfo);
+        loginLogQueue.push(loginLog);
+    }  
+}
+
+@Service
+public class LoginInfoConsumer {
+    @Autowired
+    private LoginLogQueue queue;
+    @PostConstruct
+    public voit init {
+       new Thread(() -> {
+          while (true) {
+              LoginLog loginLog = queue.take();
+              //写入数据库
+          }
+        }).start();
+    }
+}
+```
+
+
+
+## 获取用户上下文
+
+```
+@Data
+public class CurrentUser {
+    private static final TransmittableThreadLocal<CurrentUser> THREA_LOCAL = new TransmittableThreadLocal<>();    
+    private String id;
+    private String userName;
+    private String password;
+    private String phone;
+    ...   
+    public statis void set(CurrentUser user) {
+      THREA_LOCAL.set(user);
+    }   
+    public static void getCurrent() {
+      return THREA_LOCAL.get();
+    }
+}
+
+全局的SpringMvc拦截器
+public class UserInterceptor extends HandlerInterceptorAdapter {  
+   @Override  
+   public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+      CurrentUser user = getUser(request);
+      if(Objects.nonNull(user)) {
+         CurrentUser.set(user);
+      }
+   } 
+}
+```
+
+
+
+## 统计数量
+AtomicInteger的底层说白了使用自旋锁+CAS
+
+```
+@Servcie
+public class ImportSupplierService {
+  private static AtomicInteger count = new AtomicInteger(0);
+  public int importSupplier(List<SupplierInfo> supplierList) {
+       if(CollectionUtils.isEmpty(supplierList)) {
+           return 0;
+       }
+       supplierList.parallelStream().forEach(x -> {
+           try {
+             importSupplier(x);
+             count.addAndGet(1);
+           } catch(Exception e) {
+              log.error(e.getMessage(),e);
+           }
+       );
+
+      return count.get();
+  }    
+}
+```
