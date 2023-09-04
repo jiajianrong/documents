@@ -381,3 +381,17 @@
         - echo "export PATH=/usr/local/node-v16.15.0-linux-x64/bin/:$PATH" >> .bashrc
         - source .bashrc
         - node -v
+
+
+SQL优化
+
+```
+select someKeys from order_table 
+where user_id='1234' 
+order by id limit 23000,100;
+
+select a.someKeys from order_table a,
+(select id from order_table where user_id='1234' order by id limit 23000,100) b
+where a.id=b.id
+order by a.id;
+```
