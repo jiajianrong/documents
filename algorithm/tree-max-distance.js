@@ -56,3 +56,88 @@ function process(node) {
 
 let arr = process(node1);
 console.log(arr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-------
+
+
+
+   0
+ 1   2
+    3 4
+   5   6
+  7   8 9 
+
+
+
+class Node {
+	constructor(v) {
+		this.v = v;
+	}
+}
+
+
+node0 = new Node(0);
+node1 = new Node(1);
+node2 = new Node(2);
+node3 = new Node(3);
+node4 = new Node(4);
+node5 = new Node(5);
+node6 = new Node(6);
+node7 = new Node(7);
+node8 = new Node(8);
+node9 = new Node(9);
+
+
+node0.left  = node1;
+node0.right = node2;
+node2.left  = node3;
+node2.right = node4;
+node3.left  = node5;
+node4.right = node6;
+node5.left  = node7;
+node6.left  = node8;
+node6.right = node9;
+
+
+
+
+function process(node) {
+	if (node===null || node===undefined) {
+	     return [0, 0];
+	}
+	let [leftMaxDistance, leftHeight]  = process(node.left);
+	let [rightMaxDistance, rightHeight] = process(node.right);
+
+	let currHeight = Math.max(leftHeight, rightHeight) + 1;
+
+	let maxDistance = Math.max(
+		leftMaxDistance,
+		rightMaxDistance,
+		leftHeight + rightHeight + 1,
+	);
+
+	return [maxDistance, currHeight];
+}
+
+let arr = process(node0);
+console.log(arr);
+
+
+
+
+
+
+
+
