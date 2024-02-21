@@ -343,11 +343,13 @@
         du -ahd 1 /
         du -ad 1 . |sort -nr
         du -ad 1 / |sort -nr
-        sudo du -sh /*
-        sudo du -sh ./*
-        sudo du -s /* |sort -nr
-        sudo du -s ./* |sort -nr
-        sudo du -sh /home/admin/* | fgrep G
+        du -sh /*
+        du -sh ./*
+        du -s /* |sort -nr
+        du -s ./* |sort -nr
+        du -sh /home/admin/* | fgrep G
+    查看硬盘
+        lsblk
     查看文件是否被打开
         lsof faas.log
     查看文件被哪个进程打开
