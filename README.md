@@ -336,7 +336,11 @@
         sudo iptables -I INPUT -p TCP --dport 8080 -j DROP
         sudo iptables -I OUTPUT -p TCP --dport 8080 -j DROP
         sudo iptables -I FORWARD -p TCP --dport 8080 -j DROP
-        
+
+    docker
+        docker rm -f $(docker ps -q)
+        sudo kubectl get pod -n mastergo -l app=mysql -o jsonpath='{.items[0].metadata.name}'
+        sudo kubectl exec -it $POD_NAME -n mastergo -- sh -c 'mysql -uroot -p'
     
     查看文件大小
         du -ahd 1 . # -a all -h 显示大小时使用 K，M，G 等可读单位 -d 目录深度
@@ -347,6 +351,7 @@
         du -sh ./*
         du -s /* |sort -nr
         du -s ./* |sort -nr
+        du -sh * | sort -nr
         du -sh /home/admin/* | fgrep G
     查看硬盘
         lsblk
